@@ -1,15 +1,16 @@
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import ProfileCard from "@/components/layout/home/ProfileCard";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="flex flex-col md:flex-row w-full">
+        <ProfileCard />
+      <div className="w-full md:w-3/4 p-4 relative">
       <ThemeToggle />
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start"> 
-
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        
-      </footer>
+      Navigation
+        {/* <Navigation /> */}
+        {/* <MainContent /> */}
+      </div>
     </div>
   );
 }

@@ -28,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="w-full max-w-[1200px] mx-auto mt-15"> 
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -36,6 +37,7 @@ export default function RootLayout({
           >
             {children}
           </ThemeProvider> 
+        </div>
       </body>
     </html>
   );
