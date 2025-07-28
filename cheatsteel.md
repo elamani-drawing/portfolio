@@ -1,0 +1,5 @@
+- npx create-next-app@latest
+- npx shadcn@latest init
+- npm install next-themes
+- npx shadcn@latest add button
+- npm install lucide-react
