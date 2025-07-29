@@ -13,7 +13,7 @@ export default function ProfileCard() {
   return (
     <Card>
       <CardContent >
-        <div className=' rounded-lg flex flex-col items-center shadow-md'>
+        <div className="rounded-lg flex flex-col items-center shadow-md">
 
           <img
             src="https://uploadthingy.s3.us-west-1.amazonaws.com/71stSqK9LSBfiBzZLCGRcu/image.png"
