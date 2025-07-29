@@ -9,8 +9,10 @@ export default function Home() {
         <Navigation />
       </div>
       <div className="flex flex-col items-start md:flex-row w-full gap-10">
-        <ProfileCard />
-        <div className="w-full md:w-3/4 relative">
+        <div className="md:w-1/4 w-full">
+          <ProfileCard />
+        </div>
+        <div className="w-full md:w-3/4 relative mb-5">
           <MainContainer />
         </div>
       </div>
