@@ -6,7 +6,7 @@ interface SkillCardProps {
 }
 export const SkillCard = ({ icon, title, description }: SkillCardProps) => {
   return (
-    <div className="bg-gray-100 dark:bg-[#1a1a1a] p-6 rounded-lg flex shadow-sm">
+    <div className="bg-gray-200 dark:bg-[#1a1a1a] p-6 rounded-lg flex shadow-sm">
       <div className="mr-4 mt-1">{icon}</div>
       <div>
         <h3 className="text-xl font-bold mb-2">{title}</h3>

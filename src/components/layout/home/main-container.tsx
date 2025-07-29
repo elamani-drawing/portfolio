@@ -13,7 +13,7 @@ export default function MainContainer() {
                         <Navigation />
                     </div>
                 </div>
-                <div className="w-16 h-1 bg-yellow-600 dark:bg-yellow-500 mb-6"></div>
+                <div className="w-16 h-1 bg-[var(--main-color)] dark:bg-[var(--main-color)] mb-6"></div>
             </CardHeader>
             <div className="p-5 pt-0">
                 <div className="mb-8">
@@ -32,7 +32,7 @@ export default function MainContainer() {
                         <SkillCard
                             icon={
                                 <Smartphone
-                                    className="text-yellow-600 dark:text-yellow-500"
+                                    className="text-[var(--main-color)] dark:text-[var(--main-color)]"
                                     size={28}
                                 />
                             }
@@ -41,7 +41,7 @@ export default function MainContainer() {
                         />
                         <SkillCard
                             icon={
-                                <Code className="text-yellow-600 dark:text-yellow-500" size={28} />
+                                <Code className="text-[var(--main-color)] dark:text-[var(--main-color)]" size={28} />
                             }
                             title="Développement Web"
                             description="Création de sites web performants et adaptés aux besoins des utilisateurs, avec une attention particulière à l'optimisation et à l'ergonomie."
@@ -49,7 +49,7 @@ export default function MainContainer() {
                         <SkillCard
                             icon={
                                 <Gamepad2
-                                    className="text-yellow-600 dark:text-yellow-500"
+                                    className="text-[var(--main-color)] dark:text-[var(--main-color)]"
                                     size={28}
                                 />
                             }
@@ -59,7 +59,7 @@ export default function MainContainer() {
                         <SkillCard
                             icon={
                                 <Database
-                                    className="text-yellow-600 dark:text-yellow-500"
+                                    className="text-[var(--main-color)] dark:text-[var(--main-color)]"
                                     size={28}
                                 />
                             }

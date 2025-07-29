@@ -41,6 +41,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* custom */
+  --color-main: var(--main-color);
 }
 
 :root {
@@ -76,6 +79,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* custom */
+  --main-color: oklch(68.1% 0.162 75.834);
 }
 
 .dark {
@@ -110,6 +116,9 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* custom */
+  --main-color: oklch(79.5% 0.184 86.047);
 }
 
 @layer base {
@@ -119,4 +128,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer components {
+  /* .custom-hover {
+    @apply hover:bg-gray-200 dark:bg-[#222] dark:hover:bg-[#333];
+  } */
 }
