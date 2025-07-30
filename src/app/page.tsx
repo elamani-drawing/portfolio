@@ -2,16 +2,19 @@
 import MainContainer from "@/components/layout/home/main-container";
 import ProfileCard from "@/components/layout/home/profile-card";
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Navigation, { isNavItem } from "@/components/layout/home/navigation";
 
 export default function Home() {
   const searchParams = useSearchParams();
-  const sectionParam = searchParams.get('section') || 'about';
-  const [activeSection, setActiveSection] = useState(isNavItem(sectionParam) ? sectionParam : 'about');
+  const router = useRouter();
+
+  const sectionParam = searchParams.get('section');
+  const [activeSection, setActiveSection] = useState((sectionParam && isNavItem(sectionParam)) ? sectionParam : 'about');
   
   const handleNavigationSelect = (section: string) => {
     setActiveSection(section);
+    router.push(`?section=${section}`);
   }
 
   return (

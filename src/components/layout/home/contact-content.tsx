@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useSearchParams, useRouter } from 'next/navigation';
 import { Send } from 'lucide-react'
 export const ContactContent = () => {
     const [formData, setFormData] = useState({
@@ -6,12 +7,11 @@ export const ContactContent = () => {
         email: '',
         message: '',
     })
-    
+
     const formRef = useRef<HTMLFormElement>(null);
 
-    
     const [redirectURL, setRedirectURL] = useState('');
-    
+
     useEffect(() => {
         if (typeof window !== 'undefined') {
             setRedirectURL(`${window.location.origin}`)
@@ -43,15 +43,36 @@ export const ContactContent = () => {
         })
     }
 
+    const searchParams = useSearchParams();
+    const router = useRouter();
+
+    const [sendValue, setSendValue] = useState<string | null>(null);
+
+    useEffect(() => {
+        const send = searchParams.get('send');
+        if (send) {
+            setSendValue(send);
+            const newParams = new URLSearchParams(searchParams.toString());
+            newParams.delete('send');
+            router.replace(`?${newParams.toString()}`);
+
+            if (send === 'success') {
+                alert('Succès : votre action a été prise en compte.');
+            } else if (send === 'error') {
+                alert('Erreur : une erreur est survenue.');
+            }
+        }
+    }, [searchParams, router]);
+
     return (
         <div className="mb-12">
             <h2 className="text-4xl font-bold mb-2">Formulaire De Contact</h2>
             <div className="w-16 h-1 bg-[var(--main-color)] dark:bg-[var(--main-color)] mb-8"></div>
-            <form 
+            <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                action="https://formsubmit.co/assanisaidelamani@gmail.com"    
-                method="POST" 
+                action="https://formsubmit.co/assanisaidelamani@gmail.com"
+                method="POST"
                 className="space-y-6"
             >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -98,7 +119,7 @@ export const ContactContent = () => {
                         <Send size={18} />
                     </button>
                 </div>
-                <input type="hidden" name="_next" value={`${redirectURL}?section=contact`} /> 
+                <input type="hidden" name="_next" value={`${redirectURL}?section=contact&send=success`} />
                 <input type="hidden" name="_captcha" value="false" />
             </form>
         </div>
