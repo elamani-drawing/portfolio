@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react'
+"use client";
+import React, { ReactNode, useEffect, useState } from 'react'
 import {
   Linkedin,
   Github,
@@ -38,20 +39,25 @@ const socialLinks = [
 
 const imageLinks = [
   "https://media.tenor.com/MKkJWYigjycAAAAM/cute-cat-cat-cute.gif",
-  "https://media.tenor.com/Jp441Dss2BgAAAAM/type-cat.gif"
+  "https://media.tenor.com/Jp441Dss2BgAAAAM/type-cat.gif",
+  "https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyZnRvYzBvdHZvZGZicmgyaTRrZXR6c29oaWlha3Y1Y2duZGhzdXBsNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/pOKrXLf9N5g76/source.gif",
+  "https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyYTd4OHF2M2tvaHRmc2kwbndjbTFha2ZyOWQweTFvaWRwbXMzaHExZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oKIPnAiaMCws8nOsE/giphy-downsized.gif",
 ]
 
 export default function ProfileCard() { 
-  const randomIndex = Math.floor(Math.random() * imageLinks.length);
-  const randomImage = imageLinks[randomIndex];
+  const [image, setImage] = useState<string>(imageLinks[0]);
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * imageLinks.length);
+    setImage(imageLinks[randomIndex]);
+  }, []);
 
   return (
     <Card>
       <CardContent >
         <div className="rounded-lg flex flex-col items-center shadow-md">
-
           <img
-            src={randomImage}
+            src={image}
             alt="Profile"
             className="w-[150px] h-[140px] object-cover rounded-md mb-4"
           />
