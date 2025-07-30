@@ -243,7 +243,7 @@ export default function TechnicalSkills() {
                     <button
                         key={category}
                         onClick={() => setActiveCategory(category)}
-                        className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${activeCategory === category ? 'bg-[#0f172a] dark:bg-[#1a1a1a] text-white' : 'bg-gray-100 dark:bg-[#222] hover:bg-gray-200 dark:hover:bg-[#333] text-gray-700 dark:text-gray-300'}`}
+                        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${activeCategory === category ? 'bg-[#0f172a] dark:bg-[#1a1a1a] text-white' : 'bg-gray-100 dark:bg-[#222] hover:bg-gray-200 dark:hover:bg-[#333] text-gray-700 dark:text-gray-300 cursor-pointer'}`}
                     >
                         {getCategoryIcon(category)}
                         <span>{category}</span>
