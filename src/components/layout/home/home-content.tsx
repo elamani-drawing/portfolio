@@ -1,5 +1,6 @@
 import { Code, Database, Gamepad2, Smartphone } from "lucide-react";
 import { SkillCard } from "./skill-card";
+import TechnicalSkills from "./technical-skills";
 
 export default function HomeContent() {
     return (
@@ -54,6 +55,9 @@ export default function HomeContent() {
                         description="Conception, gestion et optimisation de bases de données, principalement SQL et NoSQL."
                     />
                 </div>
+            </div>
+            <div>
+                <TechnicalSkills />
             </div>
         </div>
     )
