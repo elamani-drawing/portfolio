@@ -186,6 +186,22 @@ const projects: ProjectCardProps[] = [
   },
 ]
 
+const getCategoryIcon = (category: ProjectCategory) => {
+  switch (category) {
+    case 'Web Development':
+      return <Globe size={18} />
+    case 'Software':
+      return <Briefcase size={18} />
+    case 'Cybersecurity':
+      return <Shield size={18} />
+    case 'Mobile':
+      return <Smartphone size={18} />
+    case 'All':
+    default:
+      return <Code size={18} />
+  }
+}
+
 export const Projects = () => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All')
 
@@ -193,21 +209,7 @@ export const Projects = () => {
     activeCategory === 'All'
       ? projects
       : projects.filter((project) => project.category === activeCategory)
-  const getCategoryIcon = (category: ProjectCategory) => {
-    switch (category) {
-      case 'Web Development':
-        return <Globe size={18} />
-      case 'Software':
-        return <Briefcase size={18} />
-      case 'Cybersecurity':
-        return <Shield size={18} />
-      case 'Mobile':
-        return <Smartphone size={18} />
-      case 'All':
-      default:
-        return <Code size={18} />
-    }
-  }
+
   return (
     <div className="mb-12">
       <div className="flex items-center gap-3 mb-2">
@@ -248,7 +250,7 @@ export const Projects = () => {
 
 export default function ProjectContent() {
   return (
-    <div id="projects" className="container mx-auto px-4 py-8">
+    <div className="container mx-auto">
       <h2 className="text-3xl font-bold mb-6">Projects</h2>
       <p className="text-gray-700 dark:text-gray-300 mb-4">
         Here are some of the projects I have worked on recently.
