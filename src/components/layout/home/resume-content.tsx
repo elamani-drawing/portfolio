@@ -4,9 +4,9 @@ import { BookOpen } from "lucide-react";
 export default function ResumeContent() {
     const data = [
         {
-            title: 'Développeur 1',
+            title: 'Senior IOS Developer',
             subTitle: 'Société XYZ',
-            year: '2025',
+            year: 'Aug 2022 - Current',
             descriptions: [
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -14,9 +14,9 @@ export default function ResumeContent() {
             ],
         },
         {
-            title: 'Développeur 2',
+            title: 'IOS Developer',
             subTitle: 'Société XYZ',
-            year: '2025',
+            year: 'Jun 2021 - Jul 202',
             descriptions: [
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

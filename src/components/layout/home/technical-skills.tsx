@@ -225,7 +225,7 @@ const skills = {
 const allSkills = Object.values(skills).flat()
 
 export default function TechnicalSkills() {
-    const [activeCategory, setActiveCategory] = useState<SkillCategory>('Languages')
+    const [activeCategory, setActiveCategory] = useState<SkillCategory>('All')
 
 
     const displayedSkills =
