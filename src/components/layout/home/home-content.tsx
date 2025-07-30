@@ -1,12 +1,15 @@
 import { Code, Database, Gamepad2, Smartphone } from "lucide-react";
 import { SkillCard } from "./skill-card";
 import TechnicalSkills from "./technical-skills";
+import { useI18n } from "@/locales/client";
 
-export default function HomeContent() {
+export default  function HomeContent() {
+    const t =  useI18n();
     return (
         <div>
             <div className="mb-8">
-                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.
+                <p className="mb-4">
+                {t('hello.world')} Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestiae dolores voluptas corporis dolore harum eos, ratione est repellendus ut sint cumque nisi tempore magni maiores nulla illo quae provident.
                 </p>
                 <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.</p>

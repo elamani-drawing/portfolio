@@ -3,3 +3,4 @@
 - npm install next-themes
 - npx shadcn@latest add button
 - npm install lucide-react
+- npm install next-international
