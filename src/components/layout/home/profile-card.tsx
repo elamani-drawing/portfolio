@@ -90,6 +90,7 @@ export default function ProfileCard() {
             <a
               key={index}
               href={link.href}
+              target='_blank'
               className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-[#222] dark:hover:bg-[#333] transition-colors"
             >
               {link.icon}
