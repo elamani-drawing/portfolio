@@ -35,14 +35,23 @@ const socialLinks = [
   { href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1", icon: <Youtube size={20} /> },
 ];
 
-export default function ProfileCard() {
+
+const imageLinks = [
+  "https://media.tenor.com/MKkJWYigjycAAAAM/cute-cat-cat-cute.gif",
+  "https://media.tenor.com/Jp441Dss2BgAAAAM/type-cat.gif"
+]
+
+export default function ProfileCard() { 
+  const randomIndex = Math.floor(Math.random() * imageLinks.length);
+  const randomImage = imageLinks[randomIndex];
+
   return (
     <Card>
       <CardContent >
         <div className="rounded-lg flex flex-col items-center shadow-md">
 
           <img
-            src="https://media.tenor.com/MKkJWYigjycAAAAM/cute-cat-cat-cute.gif"
+            src={randomImage}
             alt="Profile"
             className="w-[150px] h-[140px] object-cover rounded-md mb-4"
           />
