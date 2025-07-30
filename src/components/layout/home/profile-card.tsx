@@ -5,6 +5,7 @@ import {
   Award,
   Calendar,
   Youtube,
+  Mail,
 } from 'lucide-react'
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 
@@ -51,11 +52,11 @@ export default function ProfileCard() {
           </div>
         </div>
         <div className="w-full border-t border-gray-200 dark:border-gray-700 my-4"></div>
-        <RowCard
-          icon={<Award size={24} />}
-          title="Champion Régional"
-          description="WorldSkills"
-        />
+        <a href='mailto:elamanidrawing@gmail.com'><RowCard
+          icon={<Mail size={24} />}
+          title="Email"
+          description="...@gmail.com"
+        /> </a>
         <RowCard
           icon={<Calendar size={24} />}
           title="BIRTHDAY"

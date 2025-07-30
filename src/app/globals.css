@@ -121,6 +121,13 @@
   --main-color: oklch(79.5% 0.184 86.047);
 }
 
+/* highlight text selected */
+::selection {
+  /* background:  var(--main-color);  */
+  background: #74e5ff; 
+  color: black; 
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
