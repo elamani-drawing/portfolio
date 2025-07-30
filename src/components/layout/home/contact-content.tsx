@@ -1,7 +1,7 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation';
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Send } from 'lucide-react'
+import SendStatusHandler from './send-statut-handler';
 export const ContactContent = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -44,29 +44,11 @@ export const ContactContent = () => {
         })
     }
 
-    const searchParams = useSearchParams();
-    const router = useRouter();
-
-    const [sendValue, setSendValue] = useState<string | null>(null);
-
-    useEffect(() => {
-        const send = searchParams.get('send');
-        if (send) {
-            setSendValue(send);
-            const newParams = new URLSearchParams(searchParams.toString());
-            newParams.delete('send');
-            router.replace(`?${newParams.toString()}`);
-
-            if (send === 'success') {
-                alert('Succès : votre action a été prise en compte.');
-            } else if (send === 'error') {
-                alert('Erreur : une erreur est survenue.');
-            }
-        }
-    }, [searchParams, router]);
-
     return (
         <div className="mb-12">
+            <Suspense fallback={null}>
+                <SendStatusHandler successMessage="Votre mail à bien éte envoyer." errorMessage="Une erreur c'est produite." />
+            </Suspense>
             <h2 className="text-4xl font-bold mb-2">Formulaire De Contact</h2>
             <div className="w-16 h-1 bg-[var(--main-color)] dark:bg-[var(--main-color)] mb-8"></div>
             <form

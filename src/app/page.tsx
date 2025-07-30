@@ -1,17 +1,14 @@
 "use client";
 import MainContainer from "@/components/layout/home/main-container";
 import ProfileCard from "@/components/layout/home/profile-card";
-import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import Navigation, { isNavItem } from "@/components/layout/home/navigation";
+import { useRouter } from "next/navigation";
+import Navigation from "@/components/layout/home/navigation";
+import { UrlActiveSection } from "@/components/layout/home/active-section";
+import { Suspense, useState } from "react";
 
 export default function Home() {
-  const searchParams = useSearchParams();
+  const [activeSection, setActiveSection] = useState<string>('');
   const router = useRouter();
-
-  const sectionParam = searchParams.get('section');
-  const [activeSection, setActiveSection] = useState((sectionParam && isNavItem(sectionParam)) ? sectionParam : 'about');
-  
   const handleNavigationSelect = (section: string) => {
     setActiveSection(section);
     router.push(`?section=${section}`);
@@ -19,6 +16,9 @@ export default function Home() {
 
   return (
     <div>
+      <Suspense fallback={null}>
+        <UrlActiveSection setActiveSection={setActiveSection} />
+      </Suspense>
       <div className="fixed top-0 md:hidden mb-5 flex items-center justify-center w-full bg-gray-200 dark:bg-[#282829] pt-2 pb-2 rounded-bl-2xl rounded-br-2xl">
         <Navigation onSelect={handleNavigationSelect} activeSection={activeSection} />
       </div>
@@ -27,7 +27,9 @@ export default function Home() {
           <ProfileCard />
         </div>
         <div className="w-full md:w-3/4 relative mb-5">
-          <MainContainer onSelect={handleNavigationSelect} activeSection={activeSection}/>
+          {activeSection !== '' && (
+            <MainContainer onSelect={handleNavigationSelect} activeSection={activeSection} />
+          )}
         </div>
       </div>
     </div>

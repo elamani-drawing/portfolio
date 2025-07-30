@@ -15,7 +15,6 @@ export function isNavItem(value: string): value is NavItems {
 }
 
 
-
 export type NavigationProps = {
     onSelect: (section: string) => void;
     activeSection: NavItems;
