@@ -33,7 +33,7 @@ export const ContactContent = () => {
         console.log('Form submitted:', formData);
         if (formRef.current) {
             formRef.current.submit(); // send to FormSubmit
-            alert('Message envoyé!');
+            // alert('Message envoyé!');
         }
         // Reset form after submission
         setFormData({
@@ -98,8 +98,7 @@ export const ContactContent = () => {
                         <Send size={18} />
                     </button>
                 </div>
-                {/* todo ajouter un ?page=contact */}
-                <input type="hidden" name="_next" value={redirectURL} /> 
+                <input type="hidden" name="_next" value={`${redirectURL}?section=contact`} /> 
                 <input type="hidden" name="_captcha" value="false" />
             </form>
         </div>

@@ -1,12 +1,11 @@
 import { Card, CardHeader } from "@/components/ui/card";
-import Navigation, { NavigationProps } from "@/components/layout/home/navigation";
+import Navigation, { NavigationProps, NavItems } from "@/components/layout/home/navigation";
 import HomeContent from "@/components/layout/home/home-content";
 import ResumeContent from "@/components/layout/home/resume-content";
 import ProjectContent from "./project-content";
-import { Contact } from "lucide-react";
 import { ContactContent } from "./contact-content";
 
-function renderSection(section: string) {
+function renderSection(section: NavItems) {
   switch (section.toLocaleLowerCase()) {
     // case "about":
     //   return <HomeContent />; 
@@ -20,7 +19,7 @@ function renderSection(section: string) {
       return <HomeContent />;
   }
 }
-  const getTitle = (section: string) => {
+  const getTitle = (section: NavItems) => {
     switch (section) {
     //   case "about":
     //     return "Mon Profil";
