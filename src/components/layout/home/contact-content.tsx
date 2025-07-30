@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useRef, useState } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Send } from 'lucide-react'
