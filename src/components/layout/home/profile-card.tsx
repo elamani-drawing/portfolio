@@ -2,9 +2,9 @@ import React, { ReactNode } from 'react'
 import {
   Linkedin,
   Github,
-  Instagram,
   Award,
   Calendar,
+  Youtube,
 } from 'lucide-react'
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 
@@ -29,9 +29,9 @@ function RowCard({ icon, title, description }: RowCardProps) {
 }
 
 const socialLinks = [
-  { href: "#", icon: <Linkedin size={20} /> },
-  { href: "#", icon: <Github size={20} /> },
-  { href: "#", icon: <Instagram size={20} /> },
+  { href: "https://www.linkedin.com/in/said-el-amani-assani/", icon: <Linkedin size={20} /> },
+  { href: "https://github.com/elamani-drawing/", icon: <Github size={20} /> },
+  { href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1", icon: <Youtube size={20} /> },
 ];
 
 export default function ProfileCard() {
