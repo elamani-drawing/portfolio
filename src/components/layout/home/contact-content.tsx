@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Send } from 'lucide-react'
 export const ContactContent = () => {
     const [formData, setFormData] = useState({
@@ -6,6 +6,18 @@ export const ContactContent = () => {
         email: '',
         message: '',
     })
+    
+    const formRef = useRef<HTMLFormElement>(null);
+
+    
+    const [redirectURL, setRedirectURL] = useState('');
+    
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setRedirectURL(`${window.location.origin}`)
+        }
+    }, [])
+
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
@@ -15,22 +27,33 @@ export const ContactContent = () => {
             [name]: value,
         }))
     }
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        console.log('Form submitted:', formData)
+        console.log('Form submitted:', formData);
+        if (formRef.current) {
+            formRef.current.submit(); // send to FormSubmit
+            alert('Message envoyé!');
+        }
         // Reset form after submission
         setFormData({
             name: '',
             email: '',
             message: '',
         })
-        alert('Message envoyé!')
     }
+
     return (
         <div className="mb-12">
             <h2 className="text-4xl font-bold mb-2">Formulaire De Contact</h2>
             <div className="w-16 h-1 bg-[var(--main-color)] dark:bg-[var(--main-color)] mb-8"></div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form 
+                ref={formRef}
+                onSubmit={handleSubmit}
+                action="https://formsubmit.co/assanisaidelamani@gmail.com"    
+                method="POST" 
+                className="space-y-6"
+            >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <input
@@ -75,6 +98,9 @@ export const ContactContent = () => {
                         <Send size={18} />
                     </button>
                 </div>
+                {/* todo ajouter un ?page=contact */}
+                <input type="hidden" name="_next" value={redirectURL} /> 
+                <input type="hidden" name="_captcha" value="false" />
             </form>
         </div>
     )
