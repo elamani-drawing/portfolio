@@ -3,7 +3,7 @@ import { SkillCard } from "./skill-card";
 
 export default function HomeContent() {
     return (
-        <div className="">
+        <div>
             <div className="mb-8">
                 <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestiae dolores voluptas corporis dolore harum eos, ratione est repellendus ut sint cumque nisi tempore magni maiores nulla illo quae provident.

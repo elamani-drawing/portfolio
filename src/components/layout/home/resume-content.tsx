@@ -1,11 +1,33 @@
+import Timelines from "@/components/layout/home/timeline";
+import { BookOpen } from "lucide-react";
+
 export default function ResumeContent() {
+    const data = [
+        {
+            title: 'Développeur 1',
+            subTitle: 'Société XYZ',
+            year: '2025',
+            descriptions: [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            ],
+        },
+        {
+            title: 'Développeur 2',
+            subTitle: 'Société XYZ',
+            year: '2025',
+            descriptions: [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            ],
+        },
+    ]
     return (
-        <div className="p-5 pt-0">
-            <h2 className="text-3xl font-bold mb-6">Mon CV</h2>
-            <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p className="mb-4">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p className="mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <p className="mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div>
+            <Timelines title="Scolarites" icon={<BookOpen size={24} />} data={data} />
+            <Timelines title="Experiences" icon={<BookOpen size={24} />} data={data} />
         </div>
     );
 }
