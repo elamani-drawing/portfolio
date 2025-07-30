@@ -3,6 +3,8 @@ import Navigation, { NavigationProps } from "@/components/layout/home/navigation
 import HomeContent from "@/components/layout/home/home-content";
 import ResumeContent from "@/components/layout/home/resume-content";
 import ProjectContent from "./project-content";
+import { Contact } from "lucide-react";
+import { ContactContent } from "./contact-content";
 
 function renderSection(section: string) {
   switch (section.toLocaleLowerCase()) {
@@ -13,7 +15,7 @@ function renderSection(section: string) {
     case "projects":
       return <ProjectContent />;
     case "contact":
-      return <div id="contact">Contact content</div>;
+      return <ContactContent />;
     default:
       return <HomeContent />;
   }
@@ -27,7 +29,7 @@ function renderSection(section: string) {
       case "projects":
         return "Mes Projets";
       case "contact":
-        return "Contactez-moi";
+        return "Contact";
       default:
         return "Mon Profil";
     }

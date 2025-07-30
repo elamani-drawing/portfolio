@@ -202,7 +202,7 @@ const getCategoryIcon = (category: ProjectCategory) => {
   }
 }
 
-export const Projects = () => {
+export default function ProjectContent () {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All')
 
   const filteredProjects =
@@ -211,12 +211,16 @@ export const Projects = () => {
       : projects.filter((project) => project.category === activeCategory)
 
   return (
-    <div className="mb-12">
+    <div className="mb-12 container mx-auto">
       <div className="flex items-center gap-3 mb-2">
         <Briefcase className="text-[var(--main-color)] dark:text-[var(--main-color)]" size={28} />
-        <h2 className="text-4xl font-bold">Projects</h2>
+        <h2 className="text-4xl font-bold">Mes dernieres réalisation</h2>
       </div>
       <div className="w-16 h-1 bg-[var(--main-color)] dark:bg-[var(--main-color)] mb-6"></div>
+      <p className="text-gray-700 dark:text-gray-300 mb-6">
+        Here are some of the projects I have worked on recently.
+      </p>
+
       <div className="flex flex-wrap gap-2 mb-8">
         {categories.map((category) => (
           <button
@@ -245,17 +249,4 @@ export const Projects = () => {
       </div>
     </div>
   )
-}
-
-
-export default function ProjectContent() {
-  return (
-    <div className="container mx-auto">
-      <h2 className="text-3xl font-bold mb-6">Projects</h2>
-      <p className="text-gray-700 dark:text-gray-300 mb-4">
-        Here are some of the projects I have worked on recently.
-      </p>
-      <Projects />
-    </div>
-  );
 }

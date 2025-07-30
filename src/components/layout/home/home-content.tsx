@@ -14,7 +14,7 @@ export default function HomeContent() {
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ut officiis illo nam repellat quo temporibus perspiciatis totam harum odio deleniti neque in tempora omnis, nulla incidunt explicabo inventore et.
                 </p>
             </div>
-            <div>
+            <div className="mb-8">
                 <h2 className="text-3xl font-bold mb-6">Ce Que Je Fais</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <SkillCard
