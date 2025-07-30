@@ -2,6 +2,7 @@ import { Card, CardHeader } from "@/components/ui/card";
 import Navigation, { NavigationProps } from "@/components/layout/home/navigation";
 import HomeContent from "@/components/layout/home/home-content";
 import ResumeContent from "@/components/layout/home/resume-content";
+import ProjectContent from "./project-content";
 
 function renderSection(section: string) {
   switch (section.toLocaleLowerCase()) {
@@ -10,7 +11,7 @@ function renderSection(section: string) {
     case "resume":
       return <ResumeContent />;
     case "projects":
-      return <div id="projects">Projects content</div>;
+      return <ProjectContent />;
     case "contact":
       return <div id="contact">Contact content</div>;
     default:
