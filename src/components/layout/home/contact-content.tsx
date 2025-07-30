@@ -31,7 +31,7 @@ export const ContactContent = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        console.log('Form submitted:', formData);
+        // console.log('Form submitted:', formData);
         if (formRef.current) {
             formRef.current.submit(); // send to FormSubmit
             // alert('Message envoyé!');
