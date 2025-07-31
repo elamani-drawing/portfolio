@@ -1,63 +1,33 @@
-import { Code, Database, Gamepad2, Smartphone } from "lucide-react";
 import { SkillCard } from "./skill-card";
 import TechnicalSkills from "./technical-skills";
 import { useI18n } from "@/locales/client";
+import { GetBio, GetSkills } from "@/lib/services/home.service";
 
-export default  function HomeContent() {
-    const t =  useI18n();
-    
+export default function HomeContent() {
+    const t = useI18n();
+    const skills = GetSkills(t('lang'));
+    const paragraphs = GetBio(t('lang'));
     return (
         <div>
             <div className="mb-8">
-                <p className="mb-4">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestiae dolores voluptas corporis dolore harum eos, ratione est repellendus ut sint cumque nisi tempore magni maiores nulla illo quae provident.
-                </p>
-                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.</p>
-                <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ut officiis illo nam repellat quo temporibus perspiciatis totam harum odio deleniti neque in tempora omnis, nulla incidunt explicabo inventore et.
-                </p>
+                {paragraphs.map((text, index) => (
+                    <p key={index} className="mb-4">
+                        {text}
+                    </p>
+                ))}
             </div>
             <div className="mb-8">
-                <h2 className="text-3xl font-bold mb-6">Ce Que Je Fais</h2>
+                <h2 className="text-3xl font-bold mb-6">{t("section.home.myServices.title")}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <SkillCard
-                        icon={
-                            <Smartphone
-                                className="text-[var(--main-color)] dark:text-[var(--main-color)]"
-                                size={28}
-                            />
-                        }
-                        title="Développement D'Applications"
-                        description="Développement d'applications en Java et C#, en mettant l'accent sur la robustesse, la maintenabilité et une excellente expérience utilisateur."
-                    />
-                    <SkillCard
-                        icon={
-                            <Code className="text-[var(--main-color)] dark:text-[var(--main-color)]" size={28} />
-                        }
-                        title="Développement Web"
-                        description="Création de sites web performants et adaptés aux besoins des utilisateurs, avec une attention particulière à l'optimisation et à l'ergonomie."
-                    />
-                    <SkillCard
-                        icon={
-                            <Gamepad2
-                                className="text-[var(--main-color)] dark:text-[var(--main-color)]"
-                                size={28}
-                            />
-                        }
-                        title="Développement De Jeux Vidéo"
-                        description="Conception et développement de jeux interactifs avec Unity, en combinant créativité et technologies avancées."
-                    />
-                    <SkillCard
-                        icon={
-                            <Database
-                                className="text-[var(--main-color)] dark:text-[var(--main-color)]"
-                                size={28}
-                            />
-                        }
-                        title="Gestion De Bases De Données (SGBD)"
-                        description="Conception, gestion et optimisation de bases de données, principalement SQL et NoSQL."
-                    />
+                    {skills.map((skill, index) => (
+                        <SkillCard
+                            key={index}
+                            icon={skill.icon}
+                            title={skill.title}
+                            description={skill.description}
+                        />
+                    ))}
+
                 </div>
             </div>
             <div>

@@ -34,6 +34,9 @@ export default {
       'bio': [
         "data 1", "data 2"
       ],
+      'myServices' : {
+        'title' : 'Mes services'
+      },
       'technicalSkills': {
         'title': 'Competences techniques',
         'description': 'My exper',
