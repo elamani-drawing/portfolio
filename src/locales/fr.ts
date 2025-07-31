@@ -22,10 +22,33 @@ export default {
     'value': '11 Janvier 2001'
   },
   'location': 'Localisation',
-  'navigationBar' : {
-    'about' : 'Accueil',
-    'resume' : 'CV',
-    'projects' : 'projets',
-    'contact' : 'contact'
+  'navigationBar': {
+    'about': 'Accueil',
+    'resume': 'CV',
+    'projects': 'projets',
+    'contact': 'contact'
+  },
+  'section': {
+    'home': {
+      'title': 'Mon Profil',
+      'bio': [
+        "data 1", "data 2"
+      ],
+    },
+    'resume': {
+      'title': 'Mon CV',
+      'schooling' : {
+        'title' : 'Ma scolarité'
+      }
+    },
+    'projects': {
+      'title': 'Mes projets',
+      'subTitle' : 'Mes dernières réalisations',
+      'description' : "Voici quelques-uns des projets sur lesquels j'ai travaillé récemment."
+    },
+    'contact': {
+      'title': 'Me contacter',
+      'subTitle' : 'Formulaire de contact'
+    }
   }
 } as const
