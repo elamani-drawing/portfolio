@@ -9,6 +9,8 @@ import {
   Mail,
 } from 'lucide-react'
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { useI18n } from "@/locales/client";
+import { mail } from '@/lib/constant';
 
 interface RowCardProps {
   icon: ReactNode
@@ -17,6 +19,7 @@ interface RowCardProps {
 }
 
 function RowCard({ icon, title, description }: RowCardProps) {
+
   return (
     <div className="w-full flex items-center mb-4 bg-gray-200 dark:bg-[#222] p-4 rounded-lg">
       <div className="text-[var(--main-color)] dark:text-[var(--main-color)] mr-4"> {icon}</div>
@@ -44,8 +47,9 @@ const imageLinks = [
   "https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyYTd4OHF2M2tvaHRmc2kwbndjbTFha2ZyOWQweTFvaWRwbXMzaHExZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oKIPnAiaMCws8nOsE/giphy-downsized.gif",
 ]
 
-export default function ProfileCard() { 
+export default function ProfileCard() {
   const [image, setImage] = useState<string>(imageLinks[0]);
+  const t = useI18n();
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * imageLinks.length);
@@ -62,25 +66,33 @@ export default function ProfileCard() {
             className="w-[150px] h-[140px] object-cover rounded-md mb-4"
           />
           <span className="font-bold text-xl mt-4 mb-2"> Elamani Drawing </span>
-          <div className="bg-gray-200 dark:bg-[#222] text-sm p-2 px-4 rounded-full mb-8">
-            Software Developer
+          <div className='flex flex-wrap justify-center'>
+            <div className="bg-gray-200 dark:bg-[#222] text-sm p-2 px-4 rounded-full mb-2 cursor-pointer" title={t('job.softwareEngineer.description')}>
+              {t('job.softwareEngineer.label')}
+            </div>
+            <div className="bg-gray-200 dark:bg-[#222] text-sm p-2 px-4 rounded-full mb-2 cursor-pointer" title={t('job.fullStackDeveloper.description')}>
+              {t('job.fullStackDeveloper.label')}
+            </div>
+            <div className="bg-gray-200 dark:bg-[#222] text-sm p-2 px-4 rounded-full mb-2 cursor-pointer" title={t('job.cybersecurityEngineer.description')}>
+              {t('job.cybersecurityEngineer.label')}
+            </div>
           </div>
         </div>
         <div className="w-full border-t border-gray-200 dark:border-gray-700 my-4"></div>
-        <a href='mailto:elamanidrawing@gmail.com'><RowCard
+        <RowCard
+          icon={<Calendar size={24} />}
+          title={t('location')}
+          description="France"
+        />
+        <a href={'mailto:' + mail} title={mail}><RowCard
           icon={<Mail size={24} />}
           title="Email"
           description="...@gmail.com"
         /> </a>
         <RowCard
           icon={<Calendar size={24} />}
-          title="BIRTHDAY"
-          description="11 Janvier 2001"
-        />
-        <RowCard
-          icon={<Calendar size={24} />}
-          title="LOCATION"
-          description="France"
+          title={t('birthday.title')}
+          description={t('birthday.value')}
         />
       </CardContent>
       <CardFooter className="flex-col gap-2">

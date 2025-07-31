@@ -19,7 +19,7 @@ export default function Home() {
       <Suspense fallback={null}>
         <UrlActiveSection setActiveSection={setActiveSection} />
       </Suspense>
-      <div className="fixed top-0 md:hidden mb-5 flex items-center justify-center w-full bg-gray-200 dark:bg-[#282829] pt-2 pb-2 rounded-bl-2xl rounded-br-2xl">
+      <div className="z-5 fixed top-0 md:hidden mb-5 flex items-center justify-center w-full bg-gray-200 dark:bg-[#282829] pt-2 pb-2 rounded-bl-2xl rounded-br-2xl">
         <Navigation onSelect={handleNavigationSelect} activeSection={activeSection} />
       </div>
       <div className="flex flex-col items-start md:flex-row w-full gap-10">

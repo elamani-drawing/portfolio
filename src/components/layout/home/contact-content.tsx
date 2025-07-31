@@ -2,6 +2,7 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Send } from 'lucide-react'
 import SendStatusHandler from './send-statut-handler';
+import { mail } from '@/lib/constant';
 export const ContactContent = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -43,7 +44,7 @@ export const ContactContent = () => {
             message: '',
         })
     }
-
+    const actionTarget = `https://formsubmit.co/${mail}`;
     return (
         <div className="mb-12">
             <Suspense fallback={null}>
@@ -54,7 +55,7 @@ export const ContactContent = () => {
             <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                action="https://formsubmit.co/assanisaidelamani@gmail.com"
+                action={actionTarget}
                 method="POST"
                 className="space-y-6"
             >

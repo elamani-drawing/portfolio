@@ -1,11 +1,12 @@
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { useI18n } from "@/locales/client";
 
 
-const navItems = [
-    { label: "About", id: "about" },
-    { label: "Resume", id: "resume" },
-    { label: "Projects", id: "projects" },
-    { label: "Contact", id: "contact" },
+let navItems = [
+    { langCode: "navigationBar.about", id: "about" },
+    { langCode: "navigationBar.resume", id: "resume" },
+    { langCode: "navigationBar.projects", id: "projects" },
+    { langCode: "navigationBar.contact", id: "contact" },
 ];
 
 export type NavItems = typeof navItems[number]["id"];
@@ -25,25 +26,27 @@ export default function Navigation({ onSelect, activeSection }: NavigationProps)
     const cnActive = "text-[var(--main-color)] dark:text-[var(--main-color)] hover:text-[var(--main-color)] dark:hover:text-yellow-400";
 
     const handleClick = (section: string) => (e: React.MouseEvent) => {
+        console.log(section)
         if (section.toLocaleLowerCase() === activeSection.toLocaleLowerCase()) { return; } // if the section is already active, do nothing
         e.preventDefault(); // block default navigation behavior
         onSelect(section); // call the onSelect function with the section name
     };
 
+    const t = useI18n();
 
     return (
         <div className=" flex h-full">
             <div className="mr-2"><ThemeToggle /></div>
             <nav className="p-2 px-4">
                 <ul className="flex space-x-6">
-                    {navItems.map(({ label, id }) => (
+                    {navItems.map(({ langCode, id }) => (
                         <li key={id}>
                             <a
                                 href={`#${id}`}
                                 onClick={handleClick(id)}
                                 className={activeSection === id ? cnActive : cn}
                             >
-                                {label}
+                                {t(langCode as any, {})}
                             </a>
                         </li>
                     ))}
