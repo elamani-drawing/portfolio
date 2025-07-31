@@ -27,11 +27,12 @@ export default function SendStatusHandler({
         }
     }, [searchParams, router]);
 
+    const t = useI18n();
     if (sendValue === 'success') {
         return (
             <Alert className="border-emerald-600/50 text-emerald-600 dark:border-emerald-600 [&>svg]:text-emerald-600 mb-5">
                 <CircleCheckBigIcon className="h-4 w-4" />
-                <AlertTitle>Opération réussie!</AlertTitle>
+                <AlertTitle>{t("section.contact.alert.sendMail.success.title")}</AlertTitle>
                 <AlertDescription>
                     {successMessage ? successMessage : 'Success: Your action has been processed.'}
                 </AlertDescription>
@@ -39,8 +40,6 @@ export default function SendStatusHandler({
         );
     }
     
-    const t = useI18n();
-
     if (sendValue === 'error') {
         return (
             <Alert
@@ -48,7 +47,7 @@ export default function SendStatusHandler({
                 className="bg-destructive text-destructive-foreground [&>svg]:text-destructive-foreground  mb-5"
             >
                 <OctagonAlertIcon className="h-4 w-4" />
-                <AlertTitle>Opérations échouées!</AlertTitle>
+                <AlertTitle>{t("section.contact.alert.sendMail.error.title")}</AlertTitle>
                 <AlertDescription>
                     {errorMessage ? errorMessage : 'Error: An error occurred.'}
                 </AlertDescription>

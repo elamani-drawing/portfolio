@@ -51,7 +51,7 @@ export const ContactContent = () => {
     return (
         <div className="mb-12">
             <Suspense fallback={null}>
-                <SendStatusHandler successMessage="Votre mail à bien éte envoyer." errorMessage="Une erreur c'est produite." />
+                <SendStatusHandler successMessage={t('section.contact.alert.sendMail.success.description')} errorMessage={t('section.contact.alert.sendMail.error.description')} />
             </Suspense>
             <h2 className="text-4xl font-bold mb-2">{t("section.contact.subTitle")}</h2>
             <div className="w-16 h-1 bg-[var(--main-color)] dark:bg-[var(--main-color)] mb-8"></div>

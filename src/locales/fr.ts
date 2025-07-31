@@ -77,6 +77,12 @@ export default {
         'mail': 'Email',
         'message': 'Votre message',
         'submit' : 'Envoyer'
+      },
+      'alert' : {
+        'sendMail' : {
+          'success': {'title': 'Opération réussie!', 'description' : 'Votre e-mail a été envoyé avec succès. '},
+          'error' : { 'title': 'Opérations échouées!' , 'description' :  'Une erreur s\'est produite.'}
+        }
       }
     },
     'themeMode' : {
