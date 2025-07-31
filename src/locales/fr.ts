@@ -34,21 +34,44 @@ export default {
       'bio': [
         "data 1", "data 2"
       ],
+      'technicalSkills': {
+        'title': 'Competences techniques',
+        'description': 'My exper',
+        'category': {
+          'All' : 'Tous',
+          'Languages' : 'Langues',
+          'Frameworks/Libraries' : 'Frameworks/Libraries',
+          'ML/Data': 'ML/Data',
+          'Blockchain/Web3' : 'Blockchain/Web3',
+          'Cloud/DevOps': 'Cloud/DevOps',
+          'Concepts': 'Concepts',
+        }
+      }
     },
     'resume': {
       'title': 'Mon CV',
-      'schooling' : {
-        'title' : 'Ma scolarité'
+      'schooling': {
+        'title': 'Ma scolarité',
+      },
+      'experiences': {
+        'title': 'Mes expériences'
       }
     },
     'projects': {
       'title': 'Mes projets',
-      'subTitle' : 'Mes dernières réalisations',
-      'description' : "Voici quelques-uns des projets sur lesquels j'ai travaillé récemment."
+      'subTitle': 'Mes dernières réalisations',
+      'description': "Voici quelques-uns des projets sur lesquels j'ai travaillé récemment.",
+      'category': {
+        'all': 'Tous',
+        'webDevelopment': 'Développement Web',
+        'software': 'Logiciel',
+        'cybersecurity': 'Cybersécurité',
+        'mobile': 'Mobile'
+      }
     },
     'contact': {
       'title': 'Me contacter',
-      'subTitle' : 'Formulaire de contact'
+      'subTitle': 'Formulaire de contact'
     }
   }
 } as const

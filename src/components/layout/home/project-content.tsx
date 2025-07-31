@@ -7,6 +7,9 @@ import {
   Smartphone,
   Globe,
 } from 'lucide-react'
+
+import { useI18n } from "@/locales/client";
+
 type ProjectCategory =
   | 'All'
   | 'Web Development'
@@ -110,13 +113,7 @@ const ProjectCard = ({
   )
 }
 
-const categories: ProjectCategory[] = [
-  'All',
-  'Web Development',
-  'Software',
-  'Cybersecurity',
-  'Mobile',
-]
+
 const projects: ProjectCardProps[] = [
   {
     title: 'AgriSure',
@@ -186,24 +183,34 @@ const projects: ProjectCardProps[] = [
   },
 ]
 
-const getCategoryIcon = (category: ProjectCategory) => {
-  switch (category) {
-    case 'Web Development':
-      return <Globe size={18} />
-    case 'Software':
-      return <Briefcase size={18} />
-    case 'Cybersecurity':
-      return <Shield size={18} />
-    case 'Mobile':
-      return <Smartphone size={18} />
-    case 'All':
-    default:
-      return <Code size={18} />
-  }
-}
-
-export default function ProjectContent () {
+export default function ProjectContent() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All')
+
+  const t = useI18n();
+  let categories: {category: ProjectCategory, label : string}[] = [
+    { category : 'All', label : t("section.projects.category.all")},
+    { category : 'Web Development', label : t("section.projects.category.webDevelopment")},
+    { category : 'Software', label : t("section.projects.category.software")},
+    { category : 'Cybersecurity', label : t("section.projects.category.cybersecurity")},
+    { category : 'Mobile', label : t("section.projects.category.mobile")},
+  ];
+
+
+  const getCategoryIcon = (category: ProjectCategory) => {
+    switch (category) {
+      case 'Web Development':
+        return <Globe size={18} />
+      case 'Software':
+        return <Briefcase size={18} />
+      case 'Cybersecurity':
+        return <Shield size={18} />
+      case 'Mobile':
+        return <Smartphone size={18} />
+      case 'All':
+      default:
+        return <Code size={18} />
+    }
+  }
 
   const filteredProjects =
     activeCategory === 'All'
@@ -214,22 +221,22 @@ export default function ProjectContent () {
     <div className="mb-12 container mx-auto">
       <div className="flex items-center gap-3 mb-2">
         <Briefcase className="text-[var(--main-color)] dark:text-[var(--main-color)]" size={28} />
-        <h2 className="text-4xl font-bold">Mes dernieres réalisation</h2>
+        <h2 className="text-4xl font-bold">{t("section.projects.subTitle")}</h2>
       </div>
       <div className="w-16 h-1 bg-[var(--main-color)] dark:bg-[var(--main-color)] mb-6"></div>
       <p className="text-gray-700 dark:text-gray-300 mb-6">
-        Here are some of the projects I have worked on recently.
+        {t("section.projects.description")}
       </p>
 
       <div className="flex flex-wrap gap-2 mb-8">
-        {categories.map((category) => (
+        {categories.map(({category, label}) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${activeCategory === category ? 'bg-[#0f172a] dark:bg-[#1a1a1a] text-white' : 'bg-gray-100 dark:bg-[#222] hover:bg-gray-200 dark:hover:bg-[#333] text-gray-700 dark:text-gray-300 cursor-pointer'}`}
+            className={`flex itemscenter- gap-2 px-4 py-2 rounded-lg transition-colors ${activeCategory === category ? 'bg-[#0f172a] dark:bg-[#1a1a1a] text-white' : 'bg-gray-100 dark:bg-[#222] hover:bg-gray-200 dark:hover:bg-[#333] text-gray-700 dark:text-gray-300 cursor-pointer'}`}
           >
             {getCategoryIcon(category)}
-            <span>{category}</span>
+            <span>{label}</span>
           </button>
         ))}
       </div>

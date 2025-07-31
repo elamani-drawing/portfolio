@@ -3,6 +3,8 @@ import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Send } from 'lucide-react'
 import SendStatusHandler from './send-statut-handler';
 import { mail } from '@/lib/constant';
+import { useI18n } from "@/locales/client";
+
 export const ContactContent = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -45,12 +47,13 @@ export const ContactContent = () => {
         })
     }
     const actionTarget = `https://formsubmit.co/${mail}`;
+    const t = useI18n();
     return (
         <div className="mb-12">
             <Suspense fallback={null}>
                 <SendStatusHandler successMessage="Votre mail à bien éte envoyer." errorMessage="Une erreur c'est produite." />
             </Suspense>
-            <h2 className="text-4xl font-bold mb-2">Formulaire De Contact</h2>
+            <h2 className="text-4xl font-bold mb-2">{t("section.contact.subTitle")}</h2>
             <div className="w-16 h-1 bg-[var(--main-color)] dark:bg-[var(--main-color)] mb-8"></div>
             <form
                 ref={formRef}

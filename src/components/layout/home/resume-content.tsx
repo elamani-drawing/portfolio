@@ -1,33 +1,16 @@
 import Timelines from "@/components/layout/home/timeline";
 import { BookOpen } from "lucide-react";
+import { useI18n } from "@/locales/client";
+import { GetExperiences, GetSchooling } from "@/lib/services/resume.service";
 
 export default function ResumeContent() {
-    const data = [
-        {
-            title: 'Senior IOS Developer',
-            subTitle: 'Société XYZ',
-            year: 'Aug 2022 - Current',
-            descriptions: [
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            ],
-        },
-        {
-            title: 'IOS Developer',
-            subTitle: 'Société XYZ',
-            year: 'Jun 2021 - Jul 202',
-            descriptions: [
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            ],
-        },
-    ]
+    const t = useI18n();
+    const schooling = GetSchooling(t('lang'));
+    const experiences = GetExperiences(t('lang'));
     return (
         <div>
-            <Timelines title="Scolarites" icon={<BookOpen size={24} />} data={data} />
-            <Timelines title="Experiences" icon={<BookOpen size={24} />} data={data} />
+            <Timelines title={t("section.resume.schooling.title")} icon={<BookOpen size={24} />} data={schooling} />
+            <Timelines title={t("section.resume.experiences.title")} icon={<BookOpen size={24} />} data={experiences} />
         </div>
     );
 }

@@ -8,6 +8,8 @@ import {
     Braces,
     Stars,
 } from 'lucide-react'
+import { useI18n } from "@/locales/client";
+
 type SkillCategory =
     | 'All'
     | 'Languages'
@@ -29,15 +31,6 @@ const SkillItem = ({ icon, name }: SkillItemProps) => {
     )
 }
 
-const categories: SkillCategory[] = [
-    'All',
-    'Languages',
-    'Frameworks/Libraries',
-    'ML/Data',
-    'Blockchain/Web3',
-    'Cloud/DevOps',
-    'Concepts',
-]
 const getCategoryIcon = (category: SkillCategory) => {
     switch (category) {
         case 'Languages':
@@ -227,26 +220,39 @@ const allSkills = Object.values(skills).flat()
 export default function TechnicalSkills() {
     const [activeCategory, setActiveCategory] = useState<SkillCategory>('All')
 
-
     const displayedSkills =
         activeCategory === 'All' ? allSkills : skills[activeCategory]
 
+    const t = useI18n();
+    
+    const categories: { category: SkillCategory, label: string }[] = [
+        { category: 'All', label: t('section.home.technicalSkills.category.All') },
+        { category: 'Languages', label: t('section.home.technicalSkills.category.Languages') },
+        { category: 'Frameworks/Libraries', label: t('section.home.technicalSkills.category.Frameworks/Libraries') },
+        { category: 'ML/Data', label: t('section.home.technicalSkills.category.ML/Data') },
+        { category: 'Blockchain/Web3', label: t('section.home.technicalSkills.category.Blockchain/Web3') },
+        { category: 'Cloud/DevOps', label: t('section.home.technicalSkills.category.Cloud/DevOps') },
+        { category: 'Concepts', label: t('section.home.technicalSkills.category.Concepts') },
+    ]
+
+    console.log(categories);
+
     return (
         <div className="mb-12">
-            <h2 className="text-4xl font-bold mb-2">Technical Skills</h2>
+            <h2 className="text-4xl font-bold mb-2">{t('section.home.technicalSkills.title')}</h2>
             <div className="w-16 h-1 bg-yellow-600 dark:bg-yellow-500 mb-3"></div>
             <p className="text-gray-600 dark:text-gray-400 mb-8">
-                My expertise across various technologies and tools
+                {t('section.home.technicalSkills.description')}
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-                {categories.map((category) => (
+                {categories.map(({category, label}) => (
                     <button
                         key={category}
                         onClick={() => setActiveCategory(category)}
                         className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${activeCategory === category ? 'bg-[#0f172a] dark:bg-[#1a1a1a] text-white' : 'bg-gray-100 dark:bg-[#222] hover:bg-gray-200 dark:hover:bg-[#333] text-gray-700 dark:text-gray-300 cursor-pointer'}`}
                     >
                         {getCategoryIcon(category)}
-                        <span>{category}</span>
+                        <span>{label}</span>
                     </button>
                 ))}
             </div>
