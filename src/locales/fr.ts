@@ -78,6 +78,11 @@ export default {
         'message': 'Votre message',
         'submit' : 'Envoyer'
       }
+    },
+    'themeMode' : {
+      'light' : 'Clair',
+      'dark' : 'Sombre',
+      'system' : 'Système'
     }
   }
 } as const
