@@ -38,11 +38,11 @@ export default {
         'title': 'Competences techniques',
         'description': 'My exper',
         'category': {
-          'All' : 'Tous',
-          'Languages' : 'Langues',
-          'Frameworks/Libraries' : 'Frameworks/Libraries',
+          'All': 'Tous',
+          'Languages': 'Langues',
+          'Frameworks/Libraries': 'Frameworks/Libraries',
           'ML/Data': 'ML/Data',
-          'Blockchain/Web3' : 'Blockchain/Web3',
+          'Blockchain/Web3': 'Blockchain/Web3',
           'Cloud/DevOps': 'Cloud/DevOps',
           'Concepts': 'Concepts',
         }
@@ -71,7 +71,13 @@ export default {
     },
     'contact': {
       'title': 'Me contacter',
-      'subTitle': 'Formulaire de contact'
+      'subTitle': 'Formulaire de contact',
+      'form': {
+        'name': 'Nom',
+        'mail': 'Email',
+        'message': 'Votre message',
+        'submit' : 'Envoyer'
+      }
     }
   }
 } as const

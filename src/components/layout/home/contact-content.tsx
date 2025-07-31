@@ -69,7 +69,7 @@ export const ContactContent = () => {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            placeholder="Nom"
+                            placeholder={t("section.contact.form.name")}
                             required
                             className="w-full px-4 py-3 bg-gray-100 bg-opacity-10 dark:bg-[#1a1a1a] border border-gray-700 rounded-lg focus:outline-none focus:border-[var(--main-color)]"
                         />
@@ -80,7 +80,7 @@ export const ContactContent = () => {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            placeholder="Email"
+                            placeholder={t("section.contact.form.mail")}
                             required
                             className="w-full px-4 py-3 bg-gray-100 bg-opacity-10 dark:bg-[#1a1a1a] border border-gray-700 rounded-lg focus:outline-none focus:border-[var(--main-color)]"
                         />
@@ -91,7 +91,7 @@ export const ContactContent = () => {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Votre message"
+                        placeholder={t("section.contact.form.message")}
                         required
                         rows={6}
                         className="w-full px-4 py-3 bg-gray-100 bg-opacity-10 dark:bg-[#1a1a1a] border border-gray-700 rounded-lg focus:outline-none focus:border-[var(--main-color)] resize-none"
@@ -102,7 +102,7 @@ export const ContactContent = () => {
                         type="submit"
                         className="flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-[var(--main-color)]/10 text-[var(--main-color)] dark:text-[var(--main-color)] font-medium rounded-lg transition-colors cursor-pointer border-1 hover:border-transparent"
                     >
-                        <span>Envoyer</span>
+                        <span>{t("section.contact.form.submit")}</span>
                         <Send size={18} />
                     </button>
                 </div>
