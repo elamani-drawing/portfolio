@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { CircleCheckBigIcon, OctagonAlertIcon } from 'lucide-react';
+import { useI18n } from "@/locales/client";
 
 export default function SendStatusHandler({
     successMessage,
@@ -37,6 +38,8 @@ export default function SendStatusHandler({
             </Alert>
         );
     }
+    
+    const t = useI18n();
 
     if (sendValue === 'error') {
         return (

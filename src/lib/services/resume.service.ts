@@ -1,4 +1,4 @@
-import { langAvailable } from "../constant";
+import { langAvailable } from "@/lib/constant";
 
 export const data = {
     'experiences': {
