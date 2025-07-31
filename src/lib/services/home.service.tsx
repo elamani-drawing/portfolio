@@ -58,23 +58,28 @@ const skills = {
 
 const bio = {
   'fr': [
-    `fr Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.
-   Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestiae dolores voluptas corporis dolore harum eos, ratione est repellendus ut sint cumque nisi tempore magni maiores nulla illo quae provident.`,
+    `Bonjour ! Je m'appelle Saïd El Amani, je suis un développeur polyvalent.
+    Fort d’une solide formation en informatique et animé par une curiosité constante, 
+    je conçois des systèmes informatiques performants, sécurisés et centrés sur l’utilisateur, 
+    aussi bien pour le web, le desktop, le mobile que pour les systèmes embarqués et distribués.`,
 
-    `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.`,
-
-    `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ut officiis illo nam repellat quo temporibus perspiciatis totam harum odio deleniti neque in tempora omnis, nulla incidunt explicabo inventore et.`,
+    `Mon objectif est de transformer des idées complexes en solutions simples, robustes et efficaces.
+    Je veille à ce que chaque projet soit optimisé pour répondre aux besoins spécifiques des utilisateurs, tout en garantissant une expérience fluide et intuitive.
+    Mon approche repose sur une compréhension approfondie des enjeux et objectifs du client, afin de livrer un produit à la fois performant, fiable et facile à utiliser.
+    `
   ],
   'en': [
-    `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.
-   Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestiae dolores voluptas corporis dolore harum eos, ratione est repellendus ut sint cumque nisi tempore magni maiores nulla illo quae provident.`,
+    `Hi! My name is Saïd El Amani, and i’m a versatile developer.
+    With a solid background in computer science and a constant drive to learn,
+    I design efficient, secure, and user-focused software systems — for the web, desktop, mobile,
+    as well as embedded and distributed environments.`,
 
-    `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.`,
-
-    `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sed quod eveniet. Iusto, dolor! Accusantium debitis velit sed possimus laudantium dolores tenetur doloremque voluptatum sunt perspiciatis? Facere pariatur distinctio enim.
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ut officiis illo nam repellat quo temporibus perspiciatis totam harum odio deleniti neque in tempora omnis, nulla incidunt explicabo inventore et.`,
+    `My goal is to turn complex ideas into simple, robust, and effective solutions.
+    I make sure each project is optimized to meet the specific needs of users, while ensuring a smooth and intuitive experience.
+    My approach is based on a deep understanding of the client’s goals and challenges, in order to deliver a product that is both powerful and easy to use.
+    `
   ]
+
 }
 
 export function GetSkills(lang: string) {

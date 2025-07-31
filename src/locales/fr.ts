@@ -3,18 +3,18 @@ export default {
   'job': {
     'softwareEngineer': {
       'label': 'Software Engineer',
-      'title': 'Ingénieur Logiciel',
+      'title': 'Développeur Logiciel',
       'description': 'Conçoit, développe et maintient des applications logicielles robustes, performantes et évolutives. Il maîtrise les principes d’ingénierie logicielle, les algorithmes et les bonnes pratiques de développement.'
     },
     'fullStackDeveloper': {
       'label': 'Full Stack Developer',
       'title': 'Développeur Full Stack',
-      'description': 'Développe des applications web complètes, en travaillant à la fois sur le front-end (interface utilisateur) et le back-end (logique métier, base de données). Il est polyvalent et autonome dans la réalisation de projets web.'
+      'description': 'Développe des applications web complètes, en travaillant à la fois sur le front-end (interface utilisateur) et le back-end (logique métier, base de données). Polyvalent et autonome dans la réalisation de projets web.'
     },
     'cybersecurityEngineer': {
       'label': 'Cybersecurity Engineer',
       'title': 'Ingénieur en Cybersécurité',
-      'description': 'Assure la sécurité des systèmes, des réseaux et des applications. Il identifie les vulnérabilités, met en place des mesures de protection et participe à la défense contre les cyberattaques.'
+      'description': 'Assure la sécurité des systèmes, des réseaux et des applications. Identifie les vulnérabilités, met en place des mesures de protection et participe à la défense contre les cyberattaques.'
     }
   },
   'birthday': {
@@ -31,15 +31,12 @@ export default {
   'section': {
     'home': {
       'title': 'Mon Profil',
-      'bio': [
-        "data 1", "data 2"
-      ],
       'myServices' : {
         'title' : 'Mes services'
       },
       'technicalSkills': {
-        'title': 'Competences techniques',
-        'description': 'My exper',
+        'title': 'Compétences techniques',
+        'description': 'Mon expertise sur diverses technologies et outils me permet de concevoir des solutions adaptées à chaque besoin, en garantissant performance, sécurité et évolutivité.',
         'category': {
           'All': 'Tous',
           'Languages': 'Langues',

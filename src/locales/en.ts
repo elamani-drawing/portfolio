@@ -1,48 +1,45 @@
 export default {
-  'lang': 'fr',
+  'lang': 'en',
   'job': {
     'softwareEngineer': {
       'label': 'Software Engineer',
-      'title': 'Ingénieur Logiciel',
-      'description': 'Conçoit, développe et maintient des applications logicielles robustes, performantes et évolutives. Il maîtrise les principes d’ingénierie logicielle, les algorithmes et les bonnes pratiques de développement.'
+      'title': 'Software Engineer',
+      'description': 'Designs, develops, and maintains robust, high-performance, and scalable software applications. Mastery of software engineering principles, algorithms, and best development practices.'
     },
     'fullStackDeveloper': {
       'label': 'Full Stack Developer',
-      'title': 'Développeur Full Stack',
-      'description': 'Développe des applications web complètes, en travaillant à la fois sur le front-end (interface utilisateur) et le back-end (logique métier, base de données). Il est polyvalent et autonome dans la réalisation de projets web.'
+      'title': 'Full Stack Developer',
+      'description': 'Develops complete web applications, working both on the front-end (user interface) and back-end (business logic, databases). Versatile and autonomous in delivering web projects.'
     },
     'cybersecurityEngineer': {
       'label': 'Cybersecurity Engineer',
-      'title': 'Ingénieur en Cybersécurité',
-      'description': 'Assure la sécurité des systèmes, des réseaux et des applications. Il identifie les vulnérabilités, met en place des mesures de protection et participe à la défense contre les cyberattaques.'
+      'title': 'Cybersecurity Engineer',
+      'description': 'Ensures the security of systems, networks, and applications. Identifies vulnerabilities, implements protection measures, and participates in defense against cyber attacks.'
     }
   },
   'birthday': {
-    'title': 'Anniversaire',
-    'value': '11 Janvier 2001'
+    'title': 'Birthday',
+    'value': 'January 11, 2001'
   },
-  'location': 'Localisation',
+  'location': 'Location',
   'navigationBar': {
-    'about': 'Accueil',
-    'resume': 'CV',
-    'projects': 'projets',
-    'contact': 'contact'
+    'about': 'Home',
+    'resume': 'Resume',
+    'projects': 'Projects',
+    'contact': 'Contact'
   },
   'section': {
     'home': {
-      'title': 'Mon Profil',
-      'bio': [
-        "data 1", "data 2"
-      ],
+      'title': 'My Profile',
       'myServices' : {
-        'title' : 'Mes services'
+        'title' : 'My Services'
       },
       'technicalSkills': {
-        'title': 'Competences techniques',
-        'description': 'My exper',
+        'title': 'Technical Skills',
+        'description': 'My expertise in various technologies and tools enables me to design tailored solutions for each need, ensuring performance, security, and scalability.',
         'category': {
-          'All': 'Tous',
-          'Languages': 'Langues',
+          'All': 'All',
+          'Languages': 'Languages',
           'Frameworks/Libraries': 'Frameworks/Libraries',
           'ML/Data': 'ML/Data',
           'Blockchain/Web3': 'Blockchain/Web3',
@@ -52,46 +49,46 @@ export default {
       }
     },
     'resume': {
-      'title': 'Mon CV',
+      'title': 'My Resume',
       'schooling': {
-        'title': 'Ma scolarité',
+        'title': 'My Education',
       },
       'experiences': {
-        'title': 'Mes expériences'
+        'title': 'My Experiences'
       }
     },
     'projects': {
-      'title': 'Mes projets',
-      'subTitle': 'Mes dernières réalisations',
-      'description': "Voici quelques-uns des projets sur lesquels j'ai travaillé récemment.",
+      'title': 'My Projects',
+      'subTitle': 'My Latest Works',
+      'description': "Here are some of the projects I have recently worked on.",
       'category': {
-        'all': 'Tous',
-        'webDevelopment': 'Développement Web',
-        'software': 'Logiciel',
-        'cybersecurity': 'Cybersécurité',
+        'all': 'All',
+        'webDevelopment': 'Web Development',
+        'software': 'Software',
+        'cybersecurity': 'Cybersecurity',
         'mobile': 'Mobile'
       }
     },
     'contact': {
-      'title': 'Me contacter',
-      'subTitle': 'Formulaire de contact',
+      'title': 'Contact Me',
+      'subTitle': 'Contact Form',
       'form': {
-        'name': 'Nom',
+        'name': 'Name',
         'mail': 'Email',
-        'message': 'Votre message',
-        'submit' : 'Envoyer'
+        'message': 'Your message',
+        'submit' : 'Send'
       },
       'alert' : {
         'sendMail' : {
-          'success': {'title': 'Opération réussie!', 'description' : 'Votre e-mail a été envoyé avec succès. '},
-          'error' : { 'title': 'Opérations échouées!' , 'description' :  'Une erreur s\'est produite.'}
+          'success': {'title': 'Operation Successful!', 'description' : 'Your email has been sent successfully.'},
+          'error' : { 'title': 'Operation Failed!', 'description' : 'An error occurred.'}
         }
       }
     },
     'themeMode' : {
-      'light' : 'Clair',
-      'dark' : 'Sombre',
-      'system' : 'Système'
+      'light' : 'Light',
+      'dark' : 'Dark',
+      'system' : 'System'
     }
   }
 } as const
