@@ -132,7 +132,6 @@ export default function ProjectContent() {
         return <Shield size={18} />
       case 'Mobile':
         return <Smartphone size={18} />
-      case 'All':
       default:
         return <Code size={18} />
     }

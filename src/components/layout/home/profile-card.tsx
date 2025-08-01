@@ -10,7 +10,7 @@ import {
 } from 'lucide-react'
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { useI18n } from "@/locales/client";
-import { mail } from '@/lib/constant';
+import { MAIL, USER } from '@/lib/constant';
 
 interface RowCardProps {
   icon: ReactNode
@@ -65,7 +65,7 @@ export default function ProfileCard() {
             alt="Profile"
             className="w-[150px] h-[140px] object-cover rounded-md mb-4"
           />
-          <span className="font-bold text-xl mt-4 mb-2"> Elamani Drawing </span>
+          <span className="font-bold text-xl mt-4 mb-2"> {USER} </span>
           <div className='flex flex-wrap justify-center'>
             <div className="bg-gray-200 dark:bg-[#222] text-sm p-2 px-4 rounded-full mb-2 cursor-pointer" title={t('job.softwareEngineer.description')}>
               {t('job.softwareEngineer.label')}
@@ -84,7 +84,7 @@ export default function ProfileCard() {
           title={t('location')}
           description="France"
         />
-        <a href={'mailto:' + mail} title={mail}><RowCard
+        <a href={'mailto:' + MAIL} title={MAIL}><RowCard
           icon={<Mail size={24} />}
           title="Email"
           description="...@gmail.com"

@@ -235,8 +235,6 @@ export default function TechnicalSkills() {
         { category: 'Concepts', label: t('section.home.technicalSkills.category.Concepts') },
     ]
 
-    console.log(categories);
-
     return (
         <div className="mb-12">
             <h2 className="text-4xl font-bold mb-2">{t('section.home.technicalSkills.title')}</h2>

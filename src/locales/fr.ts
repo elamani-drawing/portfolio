@@ -31,8 +31,16 @@ export default {
   'section': {
     'home': {
       'title': 'Mon Profil',
-      'myServices' : {
-        'title' : 'Mes services'
+      'myServices': {
+        'title': 'Mes services',
+        'category': {
+          'All': 'Tous',
+          'Development': 'Développement',
+          'Database': 'Base de données',
+          'Reseaux': 'Réseaux',
+          'Cybersecurity': 'Cybersécurité',
+          'Mobile': 'Mobile',
+        }
       },
       'technicalSkills': {
         'title': 'Compétences techniques',
@@ -76,19 +84,19 @@ export default {
         'name': 'Nom',
         'mail': 'Email',
         'message': 'Votre message',
-        'submit' : 'Envoyer'
+        'submit': 'Envoyer'
       },
-      'alert' : {
-        'sendMail' : {
-          'success': {'title': 'Opération réussie!', 'description' : 'Votre e-mail a été envoyé avec succès. '},
-          'error' : { 'title': 'Opérations échouées!' , 'description' :  'Une erreur s\'est produite.'}
+      'alert': {
+        'sendMail': {
+          'success': { 'title': 'Opération réussie!', 'description': 'Votre e-mail a été envoyé avec succès. ' },
+          'error': { 'title': 'Opérations échouées!', 'description': 'Une erreur s\'est produite.' }
         }
       }
     },
-    'themeMode' : {
-      'light' : 'Clair',
-      'dark' : 'Sombre',
-      'system' : 'Système'
+    'themeMode': {
+      'light': 'Clair',
+      'dark': 'Sombre',
+      'system': 'Système'
     }
   }
 } as const

@@ -2,7 +2,7 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Send } from 'lucide-react'
 import SendStatusHandler from './send-statut-handler';
-import { mail } from '@/lib/constant';
+import { MAIL } from '@/lib/constant';
 import { useI18n } from "@/locales/client";
 
 export const ContactContent = () => {
@@ -46,7 +46,7 @@ export const ContactContent = () => {
             message: '',
         })
     }
-    const actionTarget = `https://formsubmit.co/${mail}`;
+    const actionTarget = `https://formsubmit.co/${MAIL}`;
     const t = useI18n();
     return (
         <div className="mb-12">

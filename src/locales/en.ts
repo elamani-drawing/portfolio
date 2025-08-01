@@ -32,7 +32,15 @@ export default {
     'home': {
       'title': 'My Profile',
       'myServices' : {
-        'title' : 'My Services'
+        'title' : 'My Services',
+        'category': {
+          'All': 'All',
+          'Development': 'Development',
+          'Database': 'Database',
+          'Reseaux': 'Networks',
+          'Cybersecurity': 'Cybersecurity',
+          'Mobile': 'Mobile',
+        }
       },
       'technicalSkills': {
         'title': 'Technical Skills',

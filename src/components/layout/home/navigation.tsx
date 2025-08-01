@@ -26,7 +26,6 @@ export default function Navigation({ onSelect, activeSection }: NavigationProps)
     const cnActive = "text-[var(--main-color)] dark:text-[var(--main-color)] hover:text-[var(--main-color)] dark:hover:text-yellow-400";
 
     const handleClick = (section: string) => (e: React.MouseEvent) => {
-        console.log(section)
         if (section.toLocaleLowerCase() === activeSection.toLocaleLowerCase()) { return; } // if the section is already active, do nothing
         e.preventDefault(); // block default navigation behavior
         onSelect(section); // call the onSelect function with the section name
