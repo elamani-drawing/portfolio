@@ -19,9 +19,44 @@ type ProjectCategory =
   | 'Software'
   | 'Cybersecurity'
   | 'Mobile'
+
 interface TechBadgeProps {
   name: string
 }
+
+function resolveCategoryLabel(category: string, t: (...args : any) => string): string {
+  switch (category) {
+    case 'All':
+      return t("section.projects.category.all");
+    case 'Web Development':
+      return t("section.projects.category.webDevelopment");
+    case 'Software':
+      return t("section.projects.category.software");
+    case 'Cybersecurity':
+      return t("section.projects.category.cybersecurity");
+    case 'Mobile':
+      return t("section.projects.category.mobile");
+    default:
+      return category; 
+  }
+}
+
+
+const getCategoryIcon = (category: ProjectCategory) => {
+  switch (category) {
+    case 'Web Development':
+      return <Globe size={18} />
+    case 'Software':
+      return <Briefcase size={18} />
+    case 'Cybersecurity':
+      return <Shield size={18} />
+    case 'Mobile':
+      return <Smartphone size={18} />
+    default:
+      return <Code size={18} />
+  }
+}
+
 const TechBadge = ({ name }: TechBadgeProps) => {
   return (
     <span className="inline-block px-2 py-1 text-sm rounded-md bg-gray-100 dark:bg-[#222] text-gray-800 dark:text-gray-300 mr-2 mb-2">
@@ -124,20 +159,6 @@ export default function ProjectContent() {
     { category: 'Mobile', label: t("section.projects.category.mobile") },
   ];
 
-  const getCategoryIcon = (category: ProjectCategory) => {
-    switch (category) {
-      case 'Web Development':
-        return <Globe size={18} />
-      case 'Software':
-        return <Briefcase size={18} />
-      case 'Cybersecurity':
-        return <Shield size={18} />
-      case 'Mobile':
-        return <Smartphone size={18} />
-      default:
-        return <Code size={18} />
-    }
-  }
   const [projects, setProjects] = useState<IProjectCard[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -153,10 +174,24 @@ export default function ProjectContent() {
           body: JSON.stringify({
             lang: t("lang"),
             repos: [
-              { repoName: "morseus", owner: GITHUB_PSEUDO, category : t("section.projects.category.software") },
-              { repoName: "stegano-rs", owner: GITHUB_PSEUDO, category : t("section.projects.category.software") },
-              { repoName: "knapsack-multidimensional", owner: GITHUB_PSEUDO, category : t("section.projects.category.software") },
-              { repoName: "ransomware-cdsi", owner: GITHUB_PSEUDO, category : t("section.projects.category.software") },
+              { repoName: "nextjs-nestjs-api-web-notes", owner: GITHUB_PSEUDO, category: 'Web Development' },
+              { repoName: "next-shadcn-landing-page ", owner: GITHUB_PSEUDO, category: 'Web Development' },
+              { repoName: "simple-nextjs-crud", owner: GITHUB_PSEUDO, category: 'Software' },
+              { repoName: "stegano-rs", owner: GITHUB_PSEUDO, category: 'Software' },
+              { repoName: "knapsack-multidimensional", owner: GITHUB_PSEUDO, category: 'Software' },
+              { repoName: "CVE-2024-4367-POC-PDFJSi", owner: GITHUB_PSEUDO, category: 'Cybersecurity' },
+              { repoName: "bdd_pop", owner: GITHUB_PSEUDO, category: 'Web Development' },
+              { repoName: "ransomware-cdsi", owner: GITHUB_PSEUDO, category: 'Software' },
+              { repoName: "lifers", owner: GITHUB_PSEUDO, category: 'Software' },
+              { repoName: "lzrs", owner: GITHUB_PSEUDO, category: 'Software' },
+              { repoName: "huffmanrs", owner: GITHUB_PSEUDO, category: 'Software' },
+              { repoName: "automaters", owner: GITHUB_PSEUDO, category: 'Software' },
+              { repoName: "morseus", owner: GITHUB_PSEUDO, category: 'Software' },
+              { repoName: "TipSharing", owner: GITHUB_PSEUDO, category: 'Web Development' },
+              { repoName: "rusty-bunny", owner: GITHUB_PSEUDO, category: 'Web Development' },
+              { repoName: "mcmc-au", owner: GITHUB_PSEUDO, category: 'Software' },
+              { repoName: "qr-code-discord", owner: GITHUB_PSEUDO, category: 'Cybersecurity' },
+              { repoName: "blog_os", owner: GITHUB_PSEUDO, category: 'Cybersecurity' },
             ],
           }),
         });
@@ -194,8 +229,8 @@ export default function ProjectContent() {
             key={category}
             onClick={() => setActiveCategory(category)}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${activeCategory === category
-                ? "bg-[#0f172a] dark:bg-[#1a1a1a] text-white"
-                : "bg-gray-100 dark:bg-[#222] hover:bg-gray-200 dark:hover:bg-[#333] text-gray-700 dark:text-gray-300 cursor-pointer"
+              ? "bg-[#0f172a] dark:bg-[#1a1a1a] text-white"
+              : "bg-gray-100 dark:bg-[#222] hover:bg-gray-200 dark:hover:bg-[#333] text-gray-700 dark:text-gray-300 cursor-pointer"
               }`}
           >
             {getCategoryIcon(category)}
@@ -213,7 +248,7 @@ export default function ProjectContent() {
               key={index}
               title={project.title}
               period={project.period}
-              category={project.category}
+              category={resolveCategoryLabel(project.category, t)}
               description={project.description}
               techStack={project.techStack}
               codeLink={project.codeLink}
