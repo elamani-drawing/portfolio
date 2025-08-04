@@ -1,4 +1,5 @@
-import { langAvailable } from "@/lib/constant"
+// import { langAvailable } from "@/lib/constant"
+import { GetProjectsFromGitHub, RepoInfo } from "../github"
 
 export interface ProjectCard {
     title: string
@@ -31,53 +32,6 @@ export const data = {
             codeLink: '#',
             liveLink: '#',
         },
-        {
-            title: 'FarmConnect',
-            period: 'Feb 2025 - Present',
-            category: 'Web Development',
-            description:
-                'Optimized crop storage for farmers, increasing warehouse occupancy by 25% via an AI-powered marketplace connecting farmers with warehouse owners. Developed a seamless booking system with real-time warehouse availability and farmer-friendly UI.',
-            techStack: ['React JS', 'Node.js', 'Express.js', 'MongoDB'],
-            codeLink: '#',
-            liveLink: '#',
-        },
-        {
-            title: 'WealthWise',
-            period: 'Jan 2025 - Present',
-            category: 'Software',
-            description:
-                'Enhanced financial literacy and user engagement by 40% through an interactive fintech platform integrating gamification. Developed an engaging React UI with gamified elements ensuring smooth user interactions.',
-            techStack: ['React JS', 'Node JS', 'Firebase', 'API Integration'],
-            codeLink: '#',
-        },
-        {
-            title: 'Blood Shortage Survey and Dashboard',
-            period: 'Jan 2025 - Present',
-            category: 'Software',
-            description:
-                'Increased efficiency of blood shortage tracking for healthcare organizations by 60% through a real-time analytics dashboard. Built an intuitive React.js dashboard with real-time charts and data visualizations.',
-            techStack: ['React.js', 'Node.js', 'MongoDB'],
-            codeLink: '#',
-        },
-        {
-            title: 'SecureNet',
-            period: 'Dec 2024 - Feb 2025',
-            category: 'Cybersecurity',
-            description:
-                'Developed an intrusion detection system that reduced false positives by 45% while improving threat detection accuracy. Implemented machine learning algorithms to analyze network traffic patterns and identify anomalies.',
-            techStack: ['Python', 'TensorFlow', 'React JS', 'Node.js'],
-            codeLink: '#',
-        },
-        {
-            title: 'MobiHealth',
-            period: 'Nov 2024 - Jan 2025',
-            category: 'Mobile',
-            description:
-                'Created a mobile health tracking application that increased user medication adherence by 37%. Features include appointment scheduling, medication reminders, and health metric tracking with visualization.',
-            techStack: ['React Native', 'Firebase', 'Express.js'],
-            codeLink: '#',
-            liveLink: '#',
-        },
 
     ],
     'en': [
@@ -100,60 +54,13 @@ export const data = {
             codeLink: '#',
             liveLink: '#',
         },
-        {
-            title: 'FarmConnect',
-            period: 'Feb 2025 - Present',
-            category: 'Web Development',
-            description:
-                'Optimized crop storage for farmers, increasing warehouse occupancy by 25% via an AI-powered marketplace connecting farmers with warehouse owners. Developed a seamless booking system with real-time warehouse availability and farmer-friendly UI.',
-            techStack: ['React JS', 'Node.js', 'Express.js', 'MongoDB'],
-            codeLink: '#',
-            liveLink: '#',
-        },
-        {
-            title: 'WealthWise',
-            period: 'Jan 2025 - Present',
-            category: 'Software',
-            description:
-                'Enhanced financial literacy and user engagement by 40% through an interactive fintech platform integrating gamification. Developed an engaging React UI with gamified elements ensuring smooth user interactions.',
-            techStack: ['React JS', 'Node JS', 'Firebase', 'API Integration'],
-            codeLink: '#',
-        },
-        {
-            title: 'Blood Shortage Survey and Dashboard',
-            period: 'Jan 2025 - Present',
-            category: 'Software',
-            description:
-                'Increased efficiency of blood shortage tracking for healthcare organizations by 60% through a real-time analytics dashboard. Built an intuitive React.js dashboard with real-time charts and data visualizations.',
-            techStack: ['React.js', 'Node.js', 'MongoDB'],
-            codeLink: '#',
-        },
-        {
-            title: 'SecureNet',
-            period: 'Dec 2024 - Feb 2025',
-            category: 'Cybersecurity',
-            description:
-                'Developed an intrusion detection system that reduced false positives by 45% while improving threat detection accuracy. Implemented machine learning algorithms to analyze network traffic patterns and identify anomalies.',
-            techStack: ['Python', 'TensorFlow', 'React JS', 'Node.js'],
-            codeLink: '#',
-        },
-        {
-            title: 'MobiHealth',
-            period: 'Nov 2024 - Jan 2025',
-            category: 'Mobile',
-            description:
-                'Created a mobile health tracking application that increased user medication adherence by 37%. Features include appointment scheduling, medication reminders, and health metric tracking with visualization.',
-            techStack: ['React Native', 'Firebase', 'Express.js'],
-            codeLink: '#',
-            liveLink: '#',
-        },
 
     ]
 }
 
 
-export function GetProjects(lang: string) {
-    let d = data[lang as langAvailable];
-    if (!!!d) return data.en;
-    return d;
+export async function GetProjects(lang: string, 
+  repos: RepoInfo[]
+): Promise<ProjectCard[]> {
+    return await GetProjectsFromGitHub(repos);
 }

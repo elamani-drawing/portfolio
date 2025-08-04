@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Code,
   ExternalLink,
@@ -10,6 +10,7 @@ import {
 
 import { useI18n } from "@/locales/client";
 import { GetProjects, ProjectCard as IProjectCard } from '@/lib/services/project.service';
+import { GITHUB_PSEUDO } from '@/lib/constant';
 
 type ProjectCategory =
   | 'All'
@@ -28,7 +29,7 @@ const TechBadge = ({ name }: TechBadgeProps) => {
   )
 }
 
-interface ProjectCardProps extends IProjectCard{}
+interface ProjectCardProps extends IProjectCard { }
 
 const ProjectCard = ({
   title,
@@ -114,12 +115,12 @@ export default function ProjectContent() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All')
   const t = useI18n();
 
-  let categories: {category: ProjectCategory, label : string}[] = [
-    { category : 'All', label : t("section.projects.category.all")},
-    { category : 'Web Development', label : t("section.projects.category.webDevelopment")},
-    { category : 'Software', label : t("section.projects.category.software")},
-    { category : 'Cybersecurity', label : t("section.projects.category.cybersecurity")},
-    { category : 'Mobile', label : t("section.projects.category.mobile")},
+  let categories: { category: ProjectCategory, label: string }[] = [
+    { category: 'All', label: t("section.projects.category.all") },
+    { category: 'Web Development', label: t("section.projects.category.webDevelopment") },
+    { category: 'Software', label: t("section.projects.category.software") },
+    { category: 'Cybersecurity', label: t("section.projects.category.cybersecurity") },
+    { category: 'Mobile', label: t("section.projects.category.mobile") },
   ];
 
   const getCategoryIcon = (category: ProjectCategory) => {
@@ -136,8 +137,18 @@ export default function ProjectContent() {
         return <Code size={18} />
     }
   }
+  const [projects, setProjects] = useState<IProjectCard[]>([]);
 
-  const projects = GetProjects(t('lang'));
+  useEffect(() => {
+    async function loadProjects() {
+      const data = await GetProjects(t("lang"), [
+       { repoName :"morseus", owner: GITHUB_PSEUDO},
+      ],
+    );
+      setProjects(data);
+    }
+    loadProjects();
+  }, []);
 
   const filteredProjects =
     activeCategory === 'All'
@@ -156,7 +167,7 @@ export default function ProjectContent() {
       </p>
 
       <div className="flex flex-wrap gap-2 mb-8">
-        {categories.map(({category, label}) => (
+        {categories.map(({ category, label }) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
