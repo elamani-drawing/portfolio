@@ -6,6 +6,7 @@ import {
   Shield,
   Smartphone,
   Globe,
+  Github,
 } from 'lucide-react'
 
 import { useI18n } from "@/locales/client";
@@ -88,7 +89,7 @@ const ProjectCard = ({
               rel="noopener noreferrer"
               className="flex items-center text-gray-700 dark:text-gray-300 hover:text-[var(--main-color)] dark:hover:text-[var(--main-color)]"
             >
-              <Code size={18} className="mr-1" />
+              <Github size={18} className="mr-1" />
               <span>Code</span>
             </a>
           )}
@@ -138,25 +139,36 @@ export default function ProjectContent() {
     }
   }
   const [projects, setProjects] = useState<IProjectCard[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadProjects() {
-      const res = await fetch("/api/github-projects", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          lang: t("lang"),
-          repos: [
-            { repoName: "morseus", owner: GITHUB_PSEUDO },
-          ]
-        })
+      setLoading(true);
+      try {
+        const res = await fetch("/api/github-projects", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            lang: t("lang"),
+            repos: [
+              { repoName: "morseus", owner: GITHUB_PSEUDO, category : t("section.projects.category.software") },
+              { repoName: "stegano-rs", owner: GITHUB_PSEUDO, category : t("section.projects.category.software") },
+              { repoName: "knapsack-multidimensional", owner: GITHUB_PSEUDO, category : t("section.projects.category.software") },
+              { repoName: "ransomware-cdsi", owner: GITHUB_PSEUDO, category : t("section.projects.category.software") },
+            ],
+          }),
+        });
+        const data = await res.json();
+        setProjects(data.projects || []);
+      } catch (e) {
+        console.error("Erreur chargement projets :", e);
+      } finally {
+        setLoading(false);
       }
-      );
-      const data = await res.json();
-      setProjects(data.projects || []);
     }
+
     loadProjects();
   }, []);
 
@@ -181,27 +193,35 @@ export default function ProjectContent() {
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`flex itemscenter- gap-2 px-4 py-2 rounded-lg transition-colors ${activeCategory === category ? 'bg-[#0f172a] dark:bg-[#1a1a1a] text-white' : 'bg-gray-100 dark:bg-[#222] hover:bg-gray-200 dark:hover:bg-[#333] text-gray-700 dark:text-gray-300 cursor-pointer'}`}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${activeCategory === category
+                ? "bg-[#0f172a] dark:bg-[#1a1a1a] text-white"
+                : "bg-gray-100 dark:bg-[#222] hover:bg-gray-200 dark:hover:bg-[#333] text-gray-700 dark:text-gray-300 cursor-pointer"
+              }`}
           >
             {getCategoryIcon(category)}
             <span>{label}</span>
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredProjects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            period={project.period}
-            category={project.category}
-            description={project.description}
-            techStack={project.techStack}
-            codeLink={project.codeLink}
-            liveLink={project.liveLink}
-          />
-        ))}
-      </div>
+
+      {loading ? (
+        <div className="text-center py-8 animate-pulse">Chargement des projets...</div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              period={project.period}
+              category={project.category}
+              description={project.description}
+              techStack={project.techStack}
+              codeLink={project.codeLink}
+              liveLink={project.liveLink}
+            />
+          ))}
+        </div>
+      )}
     </div>
-  )
+  );
 }

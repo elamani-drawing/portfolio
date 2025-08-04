@@ -72,6 +72,7 @@ export async function getRepoTopics(
 export interface RepoInfo {
   owner: string;
   repoName: string;
+  category: string
 }
 
 export async function GetProjectsFromGitHub(
@@ -79,7 +80,7 @@ export async function GetProjectsFromGitHub(
 ): Promise<ProjectCard[]> {
   const projects: ProjectCard[] = [];
 
-  for (const { owner, repoName } of repos) {
+  for (const { owner, repoName, category } of repos) {
     try {
       const [repo, topics] = await Promise.all([
         getRepo(owner, repoName),
@@ -89,7 +90,7 @@ export async function GetProjectsFromGitHub(
       projects.push({
         title: repo.name,
         period: `${new Date(repo.created_at).toLocaleDateString()} - ${new Date(repo.updated_at).toLocaleDateString()}`,
-        category: "GitHub Project",
+        category: category,
         description: repo.description || "Pas de description.",
         techStack: topics,
         codeLink: repo.html_url,
