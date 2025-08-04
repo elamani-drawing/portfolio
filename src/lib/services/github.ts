@@ -1,17 +1,43 @@
-import { ProjectCard } from "./services/project.service";
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+
+export interface ProjectCard {
+    title: string
+    period: string
+    category: string
+    description: string
+    techStack: string[]
+    codeLink?: string
+    liveLink?: string
+}
+
+const getHeaders = (acceptPreview: boolean = false): HeadersInit => ({
+  // Previews for topics
+  Accept: acceptPreview
+    ? "application/vnd.github.mercy-preview+json"
+    : "application/vnd.github.v3+json",
+  ...(GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {}),
+});
 
 export async function getPublicRepos(username: string) {
-  const res = await fetch(`https://api.github.com/users/${username}/repos`);
-  if (!res.ok) throw new Error('Failed to fetch repos');
+  const res = await fetch(`https://api.github.com/users/${username}/repos`, {
+    headers: getHeaders(),
+  });
+
+  if (!res.ok) throw new Error("Failed to fetch repos");
+
   return res.json();
 }
 
 export async function getRepo(owner: string, repoName: string) {
   try {
-    const res = await fetch(`https://api.github.com/repos/${owner}/${repoName}`);
+    const res = await fetch(`https://api.github.com/repos/${owner}/${repoName}`, {
+      headers: getHeaders(),
+    });
+
     if (!res.ok) {
       throw new Error(`Failed to fetch ${owner}/${repoName}`);
     }
+
     return res.json();
   } catch (error) {
     console.error(`Failed to fetch repo ${repoName}:`, error);
@@ -19,14 +45,18 @@ export async function getRepo(owner: string, repoName: string) {
   }
 }
 
-async function getRepoTopics(owner: string, repoName: string): Promise<string[]> {
-  console.log("--re", owner, repoName)
+export async function getRepoTopics(
+  owner: string,
+  repoName: string
+): Promise<string[]> {
   try {
-    const response = await fetch(`https://api.github.com/repos/${owner}/${repoName}/topics`, {
-      headers: {
-        Accept: "application/vnd.github.mercy-preview+json", // Header for topics
-      },
-    });
+    const response = await fetch(
+      `https://api.github.com/repos/${owner}/${repoName}/topics`,
+      {
+        headers: getHeaders(true),
+      }
+    );
+
     if (!response.ok) {
       throw new Error(`Failed to fetch topics for repo ${repoName}`);
     }
@@ -44,22 +74,17 @@ export interface RepoInfo {
   repoName: string;
 }
 
-
 export async function GetProjectsFromGitHub(
   repos: RepoInfo[],
 ): Promise<ProjectCard[]> {
   const projects: ProjectCard[] = [];
 
   for (const { owner, repoName } of repos) {
-    console.log("cherche",owner, repoName)
     try {
       const [repo, topics] = await Promise.all([
         getRepo(owner, repoName),
-        getRepoTopics(owner , repoName)
+        getRepoTopics(owner, repoName)
       ]);
-
-      // const response = await fetch(`https://api.github.com/repos/${owner}/${repoName}`);
-      // const data = await response.json();
 
       projects.push({
         title: repo.name,

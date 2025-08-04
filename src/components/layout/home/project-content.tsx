@@ -9,7 +9,7 @@ import {
 } from 'lucide-react'
 
 import { useI18n } from "@/locales/client";
-import { GetProjects, ProjectCard as IProjectCard } from '@/lib/services/project.service';
+import { ProjectCard as IProjectCard } from '@/lib/services/github';
 import { GITHUB_PSEUDO } from '@/lib/constant';
 
 type ProjectCategory =
@@ -141,11 +141,21 @@ export default function ProjectContent() {
 
   useEffect(() => {
     async function loadProjects() {
-      const data = await GetProjects(t("lang"), [
-       { repoName :"morseus", owner: GITHUB_PSEUDO},
-      ],
-    );
-      setProjects(data);
+      const res = await fetch("/api/github-projects", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          lang: t("lang"),
+          repos: [
+            { repoName: "morseus", owner: GITHUB_PSEUDO },
+          ]
+        })
+      }
+      );
+      const data = await res.json();
+      setProjects(data.projects || []);
     }
     loadProjects();
   }, []);
