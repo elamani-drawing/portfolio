@@ -1,13 +1,13 @@
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 export interface ProjectCard {
-    title: string
-    period: string
-    category: string
-    description: string
-    techStack: string[]
-    codeLink?: string
-    liveLink?: string
+  title: string
+  period: string
+  category: string
+  description: string
+  techStack: string[]
+  codeLink?: string
+  liveLink?: string
 }
 
 const getHeaders = (acceptPreview: boolean = false): HeadersInit => ({
@@ -80,14 +80,15 @@ export async function GetProjectsFromGitHub(
 ): Promise<ProjectCard[]> {
   const projects: ProjectCard[] = [];
 
-  for (const { owner, repoName, category } of repos) {
+  // make map of promise
+  const projectPromises = repos.map(async ({ owner, repoName, category }) => {
     try {
       const [repo, topics] = await Promise.all([
         getRepo(owner, repoName),
-        getRepoTopics(owner, repoName)
+        getRepoTopics(owner, repoName),
       ]);
 
-      projects.push({
+      return {
         title: repo.name,
         period: `${new Date(repo.created_at).toLocaleDateString()} - ${new Date(repo.updated_at).toLocaleDateString()}`,
         category: category,
@@ -95,11 +96,15 @@ export async function GetProjectsFromGitHub(
         techStack: topics,
         codeLink: repo.html_url,
         liveLink: repo.homepage || undefined,
-      });
+      } satisfies ProjectCard;
     } catch (err) {
       console.error(`Erreur lors du chargement du repo ${repoName}:`, err);
+      return null; // return null
     }
-  }
+  });
 
-  return projects;
+  const results = await Promise.all(projectPromises);
+
+  // Filter success
+  return results.filter((project) => project !== null);
 }

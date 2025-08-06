@@ -18,9 +18,10 @@ const TimelineItem = ({
             </div>
             <div className="ml-8 border-l-2 border-gray-200 dark:border-gray-800 pl-8 pb-2">
                 <h3 className="text-xl font-bold">
-                    {title} 
+                    {title}
                 </h3>
-                <p className="text-[var(--main-color)] dark:text-[var(--main-color)] mb-4">{subTitle}  <span className="text-gray-500 dark:text-gray-200">- {year}</span> </p>
+                <p className="text-[var(--main-color)] dark:text-[var(--main-color)] mb-4">{subTitle}
+                    <span className="mx-2">|</span><span className="text-gray-500 dark:text-gray-200"> {year}</span> </p>
                 <ul className="list-disc space-y-2">
                     {descriptions.map((responsibility, index) => (
                         <li key={index} className="text-gray-700 dark:text-gray-300">

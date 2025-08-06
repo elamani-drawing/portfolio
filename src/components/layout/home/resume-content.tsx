@@ -9,8 +9,8 @@ export default function ResumeContent() {
     const experiences = GetExperiences(t('lang'));
     return (
         <div>
-            <Timelines title={t("section.resume.schooling.title")} icon={<BookOpen size={24} />} data={schooling} />
             <Timelines title={t("section.resume.experiences.title")} icon={<BookOpen size={24} />} data={experiences} />
+            <Timelines title={t("section.resume.schooling.title")} icon={<BookOpen size={24} />} data={schooling} />
         </div>
     );
 }

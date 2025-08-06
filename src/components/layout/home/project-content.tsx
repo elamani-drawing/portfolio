@@ -179,7 +179,7 @@ export default function ProjectContent() {
               { repoName: "simple-nextjs-crud", owner: GITHUB_PSEUDO, category: 'Software' },
               { repoName: "stegano-rs", owner: GITHUB_PSEUDO, category: 'Software' },
               { repoName: "knapsack-multidimensional", owner: GITHUB_PSEUDO, category: 'Software' },
-              { repoName: "CVE-2024-4367-POC-PDFJSi", owner: GITHUB_PSEUDO, category: 'Cybersecurity' },
+              { repoName: "CVE-2024-4367-POC-PDFJS", owner: GITHUB_PSEUDO, category: 'Cybersecurity' },
               { repoName: "bdd_pop", owner: GITHUB_PSEUDO, category: 'Web Development' },
               { repoName: "ransomware-cdsi", owner: GITHUB_PSEUDO, category: 'Software' },
               { repoName: "lifers", owner: GITHUB_PSEUDO, category: 'Software' },
