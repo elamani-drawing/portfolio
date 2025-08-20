@@ -58,7 +58,7 @@ export const data = {
                 subTitle: 'INSA Haut-de-france',
                 year: 'Depuis septembre 2025',
                 descriptions: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "En cours de formation.",
                 ],
             },
             {
@@ -66,7 +66,17 @@ export const data = {
                 subTitle: 'INSA Haut-de-france',
                 year: 'septembre 2024 - aout 2025',
                 descriptions: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "Normes et analyse des risques : audit de sécurité, ISO 27001, RGPD, EBIOS, NIST, mise en place de politiques de cybersécurité.",
+                    "Ateliers pratiques : pentesting (HackTheBox, DVWA, laboratoires dédiés), exploitation de failles applicatives (injections, escalade de privilèges, attaques réseau, exécution de code à distance), forensic digital (analyse de mémoire et disques via Volatility, récupération de traces et investigation post-incident).",
+                    "Reverse engineering & sécurité mobile : décompilation d’APK (reverse engineering, code analysis), modification de binaires pour ajouter des payloads ou ajouter des fonctionnalités.",
+                    "Sécurité multimédia : chiffrement DES/AES, sécurisation JPEG, tatouage numérique (stéganographie LSB, PVD, DCT/DWT).",
+                    "Sécurité des objets mobiles et communicants : protocoles sans fil (Wi-Fi, Bluetooth, Zigbee), attaques RF, contremesures et protocoles sécurisés pour l’IoT.",
+                    "Étude des systèmes distribués : principes de fonctionnement, sécurité, blockchain (Bitcoin, Ethereum), introduction à Solaris et environnements distribués.",
+                    "Cryptologie : arithmétique modulaire, RSA, AES (modes CBC, CTR, etc.), ElGamal, Diffie-Hellman, hachage (SHA, MD5), signatures numériques, protocoles de chiffrement symétrique et asymétrique.",
+                    "Étude des systèmes embarqués et de leurs mécanismes de sécurisation : programmation sur Arduino et C, durcissement des architectures embarquées, attaques physiques et logicielles.",
+                    "Langages & outils utilisés : C, Java, Python, Arduino, Solaris, outils de pentesting et forensic (Nmap, Burp Suite, Metasploit, Wireshark, Volatility).",
+                    "Remise à niveau en réseaux, télécommunications (TCP/IP, routage, RF, Zigbee) et mathématiques appliquées à la sécurité (algèbre, théorie de l’information, cryptographie).",
+                    "Compétences transversales : anglais technique, économie et gestion."
                 ],
             },
             {
@@ -114,29 +124,79 @@ export const data = {
                 descriptions: [
                 ],
             },
+        ], 'en': [
+            {
+                title: 'Master 2 Cyber-Defense and Information Security',
+                subTitle: 'INSA Haut-de-France',
+                year: 'Since September 2025',
+                descriptions: [
+                    "Currently in training.",
+                ],
+            },
+            {
+                title: 'Master 1 Cyber-Defense and Information Security',
+                subTitle: 'INSA Haut-de-France',
+                year: 'September 2024 - August 2025',
+                descriptions: [
+                    "Standards and risk analysis: security audits, ISO 27001, GDPR, EBIOS, NIST, implementation of cybersecurity policies.",
+                    "Practical workshops: pentesting (HackTheBox, DVWA, dedicated labs), exploitation of application vulnerabilities (injections, privilege escalation, network attacks, remote code execution), digital forensics (memory and disk analysis with Volatility, trace recovery and post-incident investigation).",
+                    "Reverse engineering & mobile security: APK decompilation (reverse engineering, code analysis), binary modification to add payloads or features.",
+                    "Multimedia security: DES/AES encryption, JPEG protection, digital watermarking (LSB, PVD, DCT/DWT steganography).",
+                    "Security of mobile and connected devices: wireless protocols (Wi-Fi, Bluetooth, Zigbee), RF attacks, countermeasures and secure protocols for IoT.",
+                    "Distributed systems study: principles, security, blockchain (Bitcoin, Ethereum), introduction to Solaris and distributed environments.",
+                    "Cryptology: modular arithmetic, RSA, AES (CBC, CTR, etc.), ElGamal, Diffie-Hellman, hashing (SHA, MD5), digital signatures, symmetric and asymmetric encryption protocols.",
+                    "Embedded systems study and security mechanisms: programming on Arduino and C, hardening embedded architectures, physical and software attacks.",
+                    "Languages & tools used: C, Java, Python, Arduino, Solaris, pentesting and forensic tools (Nmap, Burp Suite, Metasploit, Wireshark, Volatility).",
+                    "Refresher in networks, telecommunications (TCP/IP, routing, RF, Zigbee) and applied mathematics for security (algebra, information theory, cryptography).",
+                    "Cross-functional skills: technical English, economics and management."
+                ],
+            },
+            {
+                title: 'Master 1 Computer Science',
+                subTitle: 'Sciences and Technology College - University of Bordeaux',
+                year: 'September 2023 - August 2024',
+                descriptions: [
+                    "Operating Systems: in-depth study of OS (processes, memory, files, synchronization), with practical work through redeveloping a teaching OS (Nachos) in C, C++ and NASM assembly",
+                    "Computer Theory: study of automata and formal languages, Turing machines, computability (decidable/undecidable problems), and complexity (P, NP, NP-completeness, NP-hard graph problems: SAT, TSP, coloring, etc.)",
+                    "Data & Machine Learning: review of linear algebra, probability and statistics; optimization methods (gradient descent), regressions, k-NN, PCA/LDA, decision trees, random forests, SVM, clustering, supervised and unsupervised learning with NumPy, SciPy, and Scikit-learn",
+                    "Artificial Intelligence: AI for games (Minimax, Alpha-Beta, search), neural networks (perceptron, deep networks with Keras), convolutional networks (CNN), practical applications in Python and Jupyter notebooks",
+                    "Programming & Software Engineering: advanced object-oriented programming, software design (UML, design patterns), advanced databases (SQL, NoSQL, MongoDB), Agile/Scrum project management",
+                    "Languages & Communication: English"
+                ]
+            },
+            {
+                title: 'Bachelor’s in Computer Science',
+                subTitle: 'François Rabelais University of Tours - Blois',
+                year: 'September 2020 - August 2023',
+                descriptions: [
+                    "Programming & Algorithms: Java, C, C++, C#, Python, assembly (MIPS, NASM), data structures, OOP, design patterns, complexity and graphs",
+                    "Databases: SQL (Oracle, MySQL, PostgreSQL), relational design, normalization, relational algebra, XML, statistics, database administration, decision support systems",
+                    "Web Development: HTML, CSS, JavaScript, Node.js, PHP (Symfony), front-end frameworks (Angular, React, Bootstrap), back-end frameworks (Express.js, Jakarta EE with Servlets/JSP), API REST design and integration, architectures (client/server, P2P, microservices)",
+                    "Mobile Development: Android (Java/Kotlin), introduction to hybrid apps (Flutter, React Native, Electron.js)",
+                    "Systems & Networks: Linux, Windows, operating systems, system programming, network administration (TCP/IP, DNS, DHCP, VPN), network security, enterprise networks",
+                    "Software Engineering & Methodologies: UML, Merise, modeling, project management, design and ergonomics, continuous integration, unit testing, Agile/Scrum",
+                    "Tools & Technologies: Git, Docker, virtualization, basic CI/CD",
+                    "Cross-functional skills: technical English, communication, mathematics for engineering (analysis, matrix calculations, probability, graphs)",
+                    "Practical experience: numerous group projects and an internship (3 months, application development)"
+                ],
+            },
+            {
+                title: 'MIASHS (Mathematics and Computer Science Applied to Humanities and Social Sciences)',
+                subTitle: 'Paul-Valéry University - Montpellier',
+                year: 'September 2018 - August 2019',
+                descriptions: [
+                    "Multidisciplinary training combining mathematics (analysis, logic, statistics), computer science (Python programming, algorithms) and human sciences (clinical and cognitive psychology, applied biology to psychology), with reinforced language skills (English and Spanish)."
+                ]
+            },
+            {
+                title: 'Scientific Baccalaureate',
+                subTitle: 'Lycée Polyvalent de Petite-Terre - Pamandzi, Mayotte',
+                year: 'September 2018 - August 2019',
+                descriptions: [
+                ],
+            },
         ],
-        'en': [
-            {
-                title: 'Schooling IOS Developer',
-                subTitle: 'Société XYZ',
-                year: 'Aug 2022 - Current',
-                descriptions: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                ],
-            },
-            {
-                title: 'IOS Developer',
-                subTitle: 'Société XYZ',
-                year: 'Jun 2021 - Jul 202',
-                descriptions: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                ],
-            },
-        ]
+
     }
 }
 
