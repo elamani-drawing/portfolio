@@ -216,7 +216,7 @@ const bio = {
     `
   ],
   'en': [
-    `Hi! My name is Saïd El Amani, and i’m a versatile Developmenteloper.
+    `Hi! My name is Saïd El Amani, and i’m a versatile Developer.
     With a solid background in computer science and a constant drive to learn,
     I design efficient, secure, and user-focused software systems — for the web, desktop, mobile,
     as well as embedded and distributed environments.`,

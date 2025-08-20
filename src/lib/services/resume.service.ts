@@ -27,6 +27,17 @@ export const data = {
                     `
                 ],
             },
+            {
+                title: 'Bénévolat',
+                subTitle: 'Projets Open Source',
+                year: 'janvier 2021 - décembre 2023',
+                descriptions: [
+                    `Participation à différents projets open source de tous types : librairies, bots, sites web, maquettes, scrapping, applications mobiles, APIs, etc.`,
+                    `Cette expérience m'a permis de rencontrer des personnes passionnées, d'acquérir de l'expérience, d'apprendre de nouveaux langages et de m'exercer plus 
+                    longuement sur les technologies étudiées à l'université.`
+                ],
+            }
+
         ],
         'en': [
             {
@@ -50,7 +61,17 @@ export const data = {
                     with advanced image processing features as well as 3D structure generation, visualization, 
                     and export capabilities.`,
                 ],
-            },
+            }, {
+                title: 'Volunteering',
+                subTitle: 'Open Source Projects',
+                year: 'January 2021 - December 2023',
+                descriptions: [
+                    `Contributed to various open source projects of all kinds: libraries, bots, websites, mockups, scraping, mobile applications, APIs, etc.`,
+                    `This experience allowed me to meet passionate people, gain hands-on experience, learn new programming languages, and practice technologies 
+                    more extensively than what I learned at university.`
+                ],
+            }
+
         ],
     },
     'schooling': {
