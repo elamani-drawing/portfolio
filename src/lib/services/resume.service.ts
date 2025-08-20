@@ -74,23 +74,44 @@ export const data = {
                 subTitle: 'Collège Sciences et Technologies - Université de Bordeaux',
                 year: 'septembre 2023 - aout 2024',
                 descriptions: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                ],
+                    "Systèmes d'exploitation : étude approfondie des systèmes d’exploitation (processus, mémoire, fichiers, synchronisation), avec mise en pratique via le redeveloppement d’un OS pédagogique (Nachos) en C, C++ et assembleur NASM",
+                    "Théorie de l’informatique : étude des automates et langages formels, des machines de Turing, de la calculabilité (problèmes décidables / indécidables), et de la complexité (classes P, NP, NP-complétude, problèmes NP-difficiles sur les graphes : SAT, TSP, coloration, etc.)",
+                    "Données & Machine Learning : rappels en algèbre linéaire, probabilités et statistiques ; méthodes d’optimisation (descente de gradient), régressions, k-NN, ACP/LDA, arbres de décision, forêts aléatoires, SVM, clustering, apprentissage supervisé et non supervisé avec NumPy, SciPy et Scikit-learn",
+                    "Intelligence Artificielle : IA pour les jeux (Minimax, Alpha-Beta, recherche), réseaux de neurones (perceptron, réseaux profonds avec Keras), réseaux convolutifs (CNN), applications pratiques en Python et Jupyter notebooks",
+                    "Programmation & Génie logiciel : approfondissement de la programmation orientée objet, conception logicielle avancée (UML, design patterns), bases de données avancées (SQL, NoSQL, MongoDB), gestion de projet Agile/Scrum",
+                    "Langues & communication : anglais"
+                ]
             },
             {
                 title: 'Licence Informatique',
                 subTitle: 'Université François Rabelais de Tours - Blois',
                 year: 'septembre 2020 - aout 2023',
                 descriptions: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "Programmation & Algorithmique : Java, C, C++, C#, Python, assembleur (MIPS, NASM), structures de données, POO, design patterns, complexité et graphes",
+                    "Bases de données : SQL (Oracle, MySQL, PostgreSQL), conception relationnelle, normalisation, algèbre relationnelle, XML, statistiques, administration de bases de données, information décisionnelle",
+                    "Développement Web : HTML, CSS, JavaScript, Node.js, PHP (Symfony), frameworks front (Angular, React, Bootstrap), frameworks back (Express.js, Jakarta EE avec Servlets/JSP), conception et intégration d’API REST, architectures (client/serveur, P2P, microservices)",
+                    "Développement Mobile : Android (Java/Kotlin), introduction aux applications hybrides (Flutter, React Native, Electron.js)",
+                    "Systèmes & Réseaux : Linux, Windows, systèmes d’exploitation, programmation système, administration réseaux (TCP/IP, DNS, DHCP, VPN), sécurité des réseaux, réseaux d’entreprise",
+                    "Génie Logiciel & Méthodologies : UML, Merise, modélisation, gestion de projet, conception et ergonomie, intégration continue, tests unitaires, Agile/Scrum",
+                    "Outils & Technologies : Git, Docker, virtualisation, bases en CI/CD",
+                    "Compétences transversales : anglais technique, communication, mathématiques pour l’ingénieur (analyse, calcul matriciel, probabilités, graphes)",
+                    "Expérience pratique : nombreux projets de groupe et stage en entreprise (3 mois, développement applicatif)"
                 ],
+            },
+            {
+                title: 'MIASHS (Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales)',
+                subTitle: 'Université Paul-Valéry - Montpellier',
+                year: 'septembre 2018 - aout 2019',
+                descriptions: [
+                    `Formation pluridisciplinaire combinant mathématiques (analyse, logique, statistiques), informatique (programmation en Python, algorithmique) 
+                    et sciences humaines (psychologie clinique, cognitive, biologie appliquée à la psychologie), avec un renforcement en langues (anglais et espagnol).`
+                ]
             },
             {
                 title: 'Baccalauréat scientifique',
                 subTitle: 'Lycée polyvalent de Petite-Terre - Pamandzi, Mayotte',
-                year: 'septembre 2020 - aout 2023',
+                year: 'septembre 2018 - aout 2019',
                 descriptions: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 ],
             },
         ],
