@@ -56,6 +56,22 @@ const skills = {
             icon: <span className="text-blue-500 font-bold">C++</span>,
         },
         {
+            name: 'C',
+            icon: <span className="text-gray-500 font-bold">C</span>,
+        },
+        {
+            name: 'C#',
+            icon: <span className="text-purple-600 font-bold">C#</span>,
+        },
+        {
+            name: 'Rust',
+            icon: <span className="text-orange-600 font-bold">🦀</span>,
+        },
+        {
+            name: 'PHP',
+            icon: <span className="text-purple-500 font-bold">PHP</span>,
+        },
+        {
             name: 'Java',
             icon: <span className="text-orange-500 font-bold">☕</span>,
         },
@@ -68,8 +84,20 @@ const skills = {
             icon: <span className="text-yellow-400 font-bold">JS</span>,
         },
         {
+            name: 'Node.js',
+            icon: <span className="text-green-600 font-bold">Node</span>,
+        },
+        {
             name: 'TypeScript',
             icon: <span className="text-blue-600 font-bold">TS</span>,
+        },
+        {
+            name: 'HTML',
+            icon: <span className="text-red-500 font-bold">HTML</span>,
+        },
+        {
+            name: 'CSS',
+            icon: <span className="text-blue-400 font-bold">CSS</span>,
         },
         {
             name: 'Dart',
@@ -90,20 +118,16 @@ const skills = {
             icon: <span className="text-blue-400 font-bold">SQL</span>,
         },
         {
-            name: 'Rust',
-            icon: <span className="text-orange-600 font-bold">🦀</span>,
+            name: 'Arduino',
+            icon: <span className="text-green-500 font-bold">⚡</span>,
         },
         {
-            name: 'Go',
-            icon: <span className="text-cyan-400 font-bold">Go</span>,
+            name: 'MIPS',
+            icon: <span className="text-indigo-500 font-bold">MIPS</span>,
         },
         {
-            name: 'Ruby',
-            icon: <span className="text-red-600 font-bold">💎</span>,
-        },
-        {
-            name: 'Swift',
-            icon: <span className="text-orange-500 font-bold">🐦</span>,
+            name: 'NASM',
+            icon: <span className="text-yellow-500 font-bold">NASM</span>,
         },
     ],
     'Frameworks/Libraries': [
@@ -112,16 +136,16 @@ const skills = {
             icon: <span className="text-blue-400 font-bold">⚛️</span>,
         },
         {
+            name: 'React Native',
+            icon: <span className="text-green-400 font-bold">RN</span>,
+        },
+        {
             name: 'Angular',
             icon: <span className="text-red-500 font-bold">A</span>,
         },
         {
-            name: 'Vue',
-            icon: <span className="text-green-500 font-bold">V</span>,
-        },
-        {
-            name: 'Laravel',
-            icon: <span className="text-red-600 font-bold">L</span>,
+            name: 'Symfony',
+            icon: <span className="text-green-700 font-bold">S</span>,
         },
         {
             name: 'Django',
@@ -136,10 +160,44 @@ const skills = {
             icon: <span className="text-cyan-500 font-bold">F</span>,
         },
         {
-            name: 'Express',
-            icon: (
-                <span className="text-gray-700 dark:text-gray-300 font-bold">Ex</span>
-            ),
+            name: 'Express.js',
+            icon: <span className="text-gray-700 dark:text-gray-300 font-bold">Ejs</span>,
+        },
+        {
+            name: 'Next.js',
+            icon: <span className="text-black dark:text-white font-bold">N</span>,
+        },
+        {
+            name: 'Flask',
+            icon: <span className="text-gray-500 font-bold">F</span>,
+        },
+        {
+            name: 'Electron.js',
+            icon: <span className="text-gray-600 font-bold">El</span>,
+        },
+        {
+            name: 'MongoDB',
+            icon: <span className="text-green-500 font-bold">M</span>,
+        },
+        {
+            name: 'Sequelize',
+            icon: <span className="text-blue-600 font-bold">Seq</span>,
+        },
+        {
+            name: 'Tailwind CSS',
+            icon: <span className="text-teal-400 font-bold">Tw</span>,
+        },
+        {
+            name: 'Bootstrap',
+            icon: <span className="text-purple-600 font-bold">B</span>,
+        },
+        {
+            name: 'Bulma',
+            icon: <span className="text-indigo-500 font-bold">Bu</span>,
+        },
+        {
+            name: 'shadcn',
+            icon: <span className="text-pink-500 font-bold">Sh</span>,
         },
     ],
     'ML/Data': [
@@ -162,16 +220,8 @@ const skills = {
     ],
     'Blockchain/Web3': [
         {
-            name: 'Ethereum',
-            icon: <span className="text-purple-600 font-bold">Ξ</span>,
-        },
-        {
-            name: 'Web3.js',
-            icon: <span className="text-orange-500 font-bold">W3</span>,
-        },
-        {
-            name: 'Hardhat',
-            icon: <span className="text-yellow-500 font-bold">🎩</span>,
+            name: 'Solaris ',
+            icon: <span className="text-yellow-500 font-bold">☀️</span>,
         },
     ],
     'Cloud/DevOps': [
@@ -224,7 +274,7 @@ export default function TechnicalSkills() {
         activeCategory === 'All' ? allSkills : skills[activeCategory]
 
     const t = useI18n();
-    
+
     const categories: { category: SkillCategory, label: string }[] = [
         { category: 'All', label: t('section.home.technicalSkills.category.All') },
         { category: 'Languages', label: t('section.home.technicalSkills.category.Languages') },
@@ -243,7 +293,7 @@ export default function TechnicalSkills() {
                 {t('section.home.technicalSkills.description')}
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-                {categories.map(({category, label}) => (
+                {categories.map(({ category, label }) => (
                     <button
                         key={category}
                         onClick={() => setActiveCategory(category)}
