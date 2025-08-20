@@ -18,7 +18,7 @@ export const data = {
             {
                 title: 'Lithophanes et cartes de profondeur en impression 3D',
                 subTitle: 'Enseignant Bordeaux',
-                year: 'Jun 2021 - Jul 202',
+                year: 'janvier 2024 - avril 2024',
                 descriptions: [
                     `Réalisation d'une application Python visant à convertir une photographie
                         numérique en un modèle 3D de lithophane, avec des fonctionnalités
@@ -30,26 +30,28 @@ export const data = {
         ],
         'en': [
             {
-                title: 'Senior IOS Developer',
-                subTitle: 'Société XYZ',
-                year: 'Aug 2022 - Current',
+                title: 'Web Development Internship',
+                subTitle: 'Ambin Informatique - Tours',
+                year: 'April 2023 - July 2023',
                 descriptions: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    "Created a web platform to integrate, update, and manage their business applications ATYL Médical and Mode d’accueil.",
+                    `Development using PHP/Symfony/MySQL and Angular-Cli technologies, including 
+                    portal design, client management, application management (GIT, versioning, etc.), 
+                    CMS content management, client documentation, a client portal for document access, 
+                    and API development.`,
                 ],
             },
             {
-                title: 'IOS Developer',
-                subTitle: 'Société XYZ',
-                year: 'Jun 2021 - Jul 202',
+                title: 'Lithophanes and Depth Maps for 3D Printing',
+                subTitle: 'Teacher Bordeaux',
+                year: 'January 2024 - April 2024',
                 descriptions: [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    `Developed a Python application to convert a digital photograph into a 3D lithophane model, 
+                    with advanced image processing features as well as 3D structure generation, visualization, 
+                    and export capabilities.`,
                 ],
             },
-        ]
+        ],
     },
     'schooling': {
         'fr': [
